@@ -1,26 +1,27 @@
+﻿import * as React from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-interface TextInputProps {
+type TextInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label: string;
-  placeholder?: string;
-  type?: string;
-}
+};
 
-export function TextInput({
-  label,
-  placeholder,
-  type = "text",
-}: TextInputProps) {
+export const TextInput = React.forwardRef<
+  HTMLInputElement,
+  TextInputProps
+>(({ label, id, className, ...props }, ref) => {
   return (
     <div className="space-y-2">
-      <Label>{label}</Label>
+      <Label htmlFor={id}>{label}</Label>
 
       <Input
-        type={type}
-        placeholder={placeholder}
-        className="h-12 rounded-xl"
+        ref={ref}
+        id={id}
+        className={className}
+        {...props}
       />
     </div>
   );
-}
+});
+
+TextInput.displayName = "TextInput";

@@ -1,9 +1,9 @@
+import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 interface AppButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
   loading?: boolean;
 }
 
@@ -20,7 +20,7 @@ export function AppButton({
       disabled={disabled || loading}
       {...props}
     >
-      {loading ? "Loading..." : children}
+      {loading ? "Signing in..." : children}
     </Button>
   );
 }
