@@ -8,12 +8,14 @@ import {
 
 import styles from "./phone-input.module.css";
 
+
 type PhoneInputProps = {
   label: string;
   value: string;
-  onChange: (phone: string) => void;
+  onChange: (value: string) => void;
   error?: string;
 };
+
 
 export function PhoneInput({
   label,
@@ -21,28 +23,40 @@ export function PhoneInput({
   onChange,
   error,
 }: PhoneInputProps) {
+
   return (
     <div className={styles.wrapper}>
+
       <label className={styles.label}>
         {label}
       </label>
+
 
       <InternationalPhoneInput
         defaultCountry="ng"
         value={value}
         onChange={onChange}
+
         className={styles.phone}
+
         inputClassName={styles.input}
+
         countrySelectorStyleProps={{
           buttonClassName: styles.countryButton,
+
+          dropdownStyleProps:{
+            className: styles.dropdown,
+          },
         }}
       />
+
 
       {error && (
         <span className={styles.error}>
           {error}
         </span>
       )}
+
     </div>
   );
 }
