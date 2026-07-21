@@ -1,10 +1,6 @@
-.mobile-container {
+.container-mobile {
+  width: 100%;
   max-width: 430px;
-  margin: 0 auto;
-}
-
-.page-padding {
-  padding: 24px;
 }
 
 .flex-center {
@@ -13,6 +9,21 @@
   align-items: center;
 }
 
-.text-center {
-  text-align: center;
+.page-center {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-md);
+}
+
+.rounded-card {
+  border-radius: var(--radius-xl);
+}
+
+.transition-default {
+  transition: all .2s ease;
 }

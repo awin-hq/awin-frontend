@@ -1,17 +1,25 @@
-import { AuthHeader } from "@/components/auth/auth-header";
+import { Logo } from "@/components/auth/logo/logo";
+import { AuthHeader } from "@/components/auth/auth-header/auth-header";
+import { AuthSwitch } from "@/components/auth/auth-switch";
 import { LoginForm } from "@/features/auth/components/login-form";
 
 export default function LoginPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center p-6">
-      <div className="w-full max-w-sm space-y-8">
-        <AuthHeader
-          title="Welcome Back"
-          subtitle="Sign in to continue to AWÍN"
-        />
+    <>
+      <Logo />
 
-        <LoginForm />
-      </div>
-    </main>
+      <AuthHeader
+        title="Welcome back."
+        description="Sign in to manage your customers, track repayments, and grow your business."
+      />
+
+      <AuthSwitch
+        text="New to AWÍN?"
+        action="Create an account"
+        href="/register"
+      />
+
+      <LoginForm />
+    </>
   );
 }

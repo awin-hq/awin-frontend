@@ -1,0 +1,38 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  min-height: 100vh;
+  width: 100%;
+  
+  padding: 48px 24px;
+}
+
+.container {
+  width: 100%;
+  max-width: 420px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 32px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.switch {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.form {
+  width: 100%;
+}

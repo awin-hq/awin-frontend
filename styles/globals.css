@@ -1,13 +1,4 @@
-body {
-  background-color: var(--color-background);
-  color: var(--color-text);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-}
+@import "./styles/reset.css";
+@import "./styles/variables.css";
+@import "./styles/typography.css";
+@import "./styles/utilities.css";

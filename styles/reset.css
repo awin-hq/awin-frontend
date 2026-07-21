@@ -1,34 +1,22 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-* {
-  margin: 0;
+html{
+
+font-size:16px;
+
 }
 
-html,
-body {
-  min-height: 100%;
-}
+body{
 
-body {
-  line-height: 1.5;
-}
+background:var(--color-background);
+color:var(--color-text);
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
+font-family:
+Inter,
+sans-serif;
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
 }

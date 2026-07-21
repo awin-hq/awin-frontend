@@ -1,55 +1,42 @@
 :root {
-  /* ==========================================
-     COLORS
-  ========================================== */
 
-  --color-primary: #FC6710;
-  --color-primary-hover: #E95E0E;
+  /* ===== COLORS ===== */
 
-  --color-background: #FFFFFF;
+  --color-primary: #FF6B00;
+  --color-primary-hover: #E86100;
+
+  --color-background: #F6F7FB;
   --color-surface: #FFFFFF;
 
-  --color-text: #111827;
+  --color-text: #1E1E1E;
   --color-text-secondary: #6B7280;
 
   --color-border: #E5E7EB;
 
-  --color-success: #22C55E;
-  --color-error: #EF4444;
+  --color-success: #14AE5C;
+  --color-error: #DC2626;
 
-  /* ==========================================
-     BORDER RADIUS
-  ========================================== */
+  /* ===== Radius ===== */
 
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
-  --radius-full: 9999px;
+  --radius-xl: 24px;
 
-  /* ==========================================
-     SPACING
-  ========================================== */
+  /* ===== Shadows ===== */
 
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-10: 40px;
-  --space-12: 48px;
+  --shadow-card:
+      0 8px 24px rgba(0,0,0,.08);
 
-  /* ==========================================
-     SHADOWS
-  ========================================== */
+  /* ===== Spacing ===== */
 
-  --shadow-sm: 0 2px 8px rgba(0,0,0,.05);
-  --shadow-md: 0 8px 24px rgba(0,0,0,.08);
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-8:32px;
+  --space-10:40px;
 
-  /* ==========================================
-     TRANSITIONS
-  ========================================== */
-
-  --transition-fast: 0.2s ease;
 }

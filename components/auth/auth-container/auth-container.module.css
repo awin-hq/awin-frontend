@@ -1,0 +1,30 @@
+.wrapper {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--color-surface);
+    
+}
+
+.card {
+  width: 100%;
+  max-width: 430px;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+  
+  padding: 60px 16px;
+}
+
+@media (min-width: 768px) {
+  .card {
+    min-height: 860px;
+  }
+}
