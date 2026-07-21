@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Controller, useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 
 import styles from "./phone-form.module.css";
@@ -8,18 +8,25 @@ import styles from "./phone-form.module.css";
 import { PhoneInput } from "@/components/forms/phone-input";
 import { PrimaryButton } from "@/components/buttons/primary-button";
 
+type PhoneFormData = {
+  phone: string;
+};
 
 export function PhoneForm() {
   const router = useRouter();
 
-  const [phone, setPhone] = useState("");
+  const {
+    control,
+    handleSubmit,
+  } = useForm<PhoneFormData>({
+    defaultValues: {
+      phone: "",
+    },
+  });
 
-  function handleSubmit(
-    e: React.FormEvent
-  ) {
-    e.preventDefault();
 
-    console.log(phone);
+  function onSubmit(data: PhoneFormData) {
+    console.log(data);
 
     router.push("/otp");
   }
@@ -27,15 +34,20 @@ export function PhoneForm() {
 
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={handleSubmit(onSubmit)}
       className={styles.form}
     >
 
-      <PhoneInput
-        label="Phone Number"
-        value={phone}
-        onChange={setPhone}
-        placeholder="801 234 5678"
+      <Controller
+        name="phone"
+        control={control}
+        render={({ field }) => (
+          <PhoneInput
+            label="Phone Number"
+            value={field.value}
+            onChange={field.onChange}
+          />
+        )}
       />
 
 
