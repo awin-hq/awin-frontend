@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 import styles from "./register-form.module.css";
@@ -17,10 +18,14 @@ type RegisterFormData = {
 };
 
 export function RegisterForm() {
+  const router = useRouter();
+
   const { register, handleSubmit } = useForm<RegisterFormData>();
 
   function onSubmit(data: RegisterFormData) {
     console.log(data);
+
+    router.push("/phone");
   }
 
   return (

@@ -1,0 +1,23 @@
+.button {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  color: var(--color-text-primary);
+
+  transition: background .2s ease;
+}
+
+.button:hover {
+  background: rgba(0, 0, 0, .05);
+}
