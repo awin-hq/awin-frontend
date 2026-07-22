@@ -1,0 +1,62 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 4px;
+
+  text-decoration: none;
+  color: inherit;
+
+  border-radius: var(--radius-md);
+
+  transition: background 0.2s ease;
+}
+
+.item:hover {
+  background: var(--color-surface);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.phone {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.badge {
+  flex-shrink: 0;
+
+  padding: 6px 16px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.due {
+  background: var(--color-error);
+}
+
+.overdue {
+  background: #b91c1c;
+}
+
+.paid {
+  background: var(--color-success);
+}

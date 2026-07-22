@@ -1,0 +1,52 @@
+.card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 24px 20px 28px;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+.label {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.value {
+  margin: 4px 0 2px;
+
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.debtors {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+/* Decorative Adire-inspired strip along the bottom of the card. */
+.pattern {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 14px;
+
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-primary) 0,
+    var(--color-primary) 6px,
+    #1e1e1e 6px,
+    #1e1e1e 12px,
+    #b45309 12px,
+    #b45309 18px
+  );
+
+  opacity: 0.85;
+}

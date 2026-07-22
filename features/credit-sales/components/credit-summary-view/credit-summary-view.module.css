@@ -1,0 +1,78 @@
+.view {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px;
+}
+
+.menuButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--color-text);
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.menuButton:hover {
+  background: var(--color-border);
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding: 8px 16px 16px;
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 320px;
+
+  background: #eef0f6;
+  border-radius: var(--radius-lg);
+}
+
+.placeholderText {
+  padding: 0 24px;
+
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  text-align: center;
+}
+
+.action button {
+  height: 52px;
+  border-radius: var(--radius-md);
+}
