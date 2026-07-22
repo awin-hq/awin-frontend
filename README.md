@@ -1,124 +1,183 @@
 # AWÍN Frontend
 
-A mobile-first web application for **AWÍN**, a digital credit management platform that helps Nigerian traders record credit sales, track repayments, and manage customer debt with confidence.
+A mobile-first web application for **AWÍN**, a digital credit management platform that helps traders record credit sales, monitor repayments, and manage customer debt efficiently.
 
 ---
 
-## About the Project
+# About
 
-AWÍN digitizes the traditional notebook used by many small businesses to record sales on credit. It enables traders to:
+AWÍN replaces the traditional debt notebook with a modern digital solution designed for Nigerian SMEs.
+
+With AWÍN, traders can:
 
 - Record credit sales
-- Track outstanding customer balances
+- Track customer balances
 - Record repayments
 - View transaction history
-- Receive payment reminders
+- Receive repayment reminders
 - Generate business insights
 
-The project is built with a **mobile-first** approach because the primary users are traders who operate mainly from their smartphones.
+The application is designed mobile-first because the majority of users operate primarily from smartphones.
 
 ---
 
-## Tech Stack
+# Tech Stack
 
-### Frontend
+## Framework
 
-- Next.js 16
+- Next.js 16 (App Router)
 - React 19
 - TypeScript
+
+## UI
+
+- CSS Modules
 - Tailwind CSS v4
 - shadcn/ui
 - Lucide React
+
+## Forms
+
 - React Hook Form
 - Zod
 
-### Development Tools
+## Development
 
-- Git & GitHub
 - ESLint
 - Turbopack
+- Git & GitHub
 
 ---
 
-## Project Structure
+# Current Progress
 
-awin-frontend/
-│
-├── app/
-│   ├── (auth)/
-│   │   ├── login/
-│   │   ├── register/
-│   │   ├── forgot-password/
-│   │   └── layout.tsx
-│   │
-│   ├── (dashboard)/
-│   │   ├── dashboard/
-│   │   ├── customers/
-│   │   ├── credit-sales/
-│   │   ├── repayments/
-│   │   ├── reports/
-│   │   └── settings/
-│   │
-│   ├── globals.css
-│   ├── layout.tsx
-│   └── page.tsx
-│
-├── components/
-├── features/
-├── hooks/
-├── lib/
-├── services/
-├── styles/
-├── types/
-├── utils/
-├── constants/
-├── public/
-├── package.json
-└── README.md
+## ✅ Authentication
+
+Completed screens include:
+
+- Login
+- Register
+- Phone Number
+- OTP Verification
+- Create PIN
+- Registration Success
+- Forgot Password
+- Reset Password
+
+Authentication components are fully reusable and follow the AWÍN design system.
 
 ---
 
-## Getting Started
+# Project Structure
 
-### 1. Clone the repository
+```text
+app/
+│
+├── (auth)
+│   ├── login/
+│   ├── register/
+│   ├── phone/
+│   ├── otp/
+│   ├── create-pin/
+│   ├── pin-loading/
+│   ├── forgot-password/
+│   ├── reset-password/
+│   └── success/
+│
+├── (dashboard)
+│   ├── dashboard/
+│   ├── customers/
+│   ├── credit-sales/
+│   ├── repayments/
+│   ├── reports/
+│   └── settings/
+│
+├── layout.tsx
+└── page.tsx
+
+components/
+features/
+lib/
+services/
+styles/
+types/
+utils/
+public/
+```
+
+---
+
+# Design System
+
+Reusable components include:
+
+## Buttons
+
+- Primary Button
+
+## Inputs
+
+- Text Input
+- Password Input
+- Phone Input
+- Password Strength Indicator
+
+## Authentication
+
+- Logo
+- Auth Header
+- Auth Switch
+- Back Button
+
+These components are designed to be reusable throughout the application.
+
+---
+
+# Getting Started
+
+## 1. Clone the repository
 
 ```bash
 git clone https://github.com/awin-hq/awin-frontend.git
 ```
 
-### 2. Navigate into the project
+## 2. Navigate into the project
 
 ```bash
 cd awin-frontend
 ```
 
-### 3. Install dependencies
+## 3. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Start the development server
+## 4. Start the development server
 
 ```bash
 npm run dev
 ```
 
-Open:
+Open your browser and visit:
 
-```
+```text
 http://localhost:3000
 ```
 
 ---
 
-## Available Scripts
+# Available Scripts
+
+## Development
 
 ```bash
 npm run dev
 ```
 
-Runs the development server.
+Starts the local development server.
+
+## Production Build
 
 ```bash
 npm run build
@@ -126,146 +185,176 @@ npm run build
 
 Creates a production build.
 
+## Start Production
+
 ```bash
 npm run start
 ```
 
-Starts the production server.
+Runs the production server.
+
+## Lint
 
 ```bash
 npm run lint
 ```
 
-Runs ESLint.
+Runs ESLint across the project.
 
 ---
 
-## Git Workflow
+# Development Workflow
 
-We use Conventional Commits.
+The project follows a **feature-based architecture**.
 
-Examples:
+Each feature contains:
+
+- UI
+- Components
+- Styling
+- Business Logic
+
+Reusable UI components are placed inside the global **components** directory, while page-specific functionality lives inside **features**.
+
+Development follows a **mobile-first** approach before desktop enhancements.
+
+---
+
+# Git Workflow
+
+This project uses **Conventional Commits**.
+
+## Examples
 
 ```text
-feat: add login page
-feat: create dashboard layout
-fix: correct validation issue
-refactor: simplify auth hook
+feat(auth): add login page
+feat(customers): create customer table
+fix(auth): resolve password validation
+refactor(forms): simplify input components
+style(button): update spacing
 docs: update README
-style: improve button spacing
-chore: configure shadcn
+chore: configure eslint
 ```
 
 ---
 
-## Branch Strategy
+# Branch Strategy
 
-```
-main
-```
+## main
 
 Production-ready code.
 
-```
-develop
-```
+## develop
 
 Active development branch.
 
-Feature branches should follow:
+### Feature Branches
 
-```
-feature/login-page
+```text
+feature/auth
 feature/dashboard
 feature/customers
+feature/credit-sales
+feature/repayments
+feature/reports
 ```
 
 ---
 
-## Coding Standards
+# Coding Standards
 
-- Use TypeScript.
-- Build reusable components.
-- Keep components small and focused.
-- Prefer composition over duplication.
-- Use feature-based organization.
-- Mobile-first responsive design.
-- Run `npm run lint` before committing.
-
----
-
-## Design Principles
-
-- Mobile-first
-- Accessibility
-- Simplicity
-- Consistency
-- Performance
+- TypeScript first
+- Build reusable components
+- Keep components small and focused
+- Avoid duplicated UI
+- Feature-based architecture
+- Mobile-first development
+- Semantic HTML
+- CSS Modules for component styling
+- Run `npm run lint` before committing
 
 ---
 
-## Roadmap
+# Development Principles
 
-### Phase 1
-
-- [ ] Authentication
-- [ ] Dashboard
-- [ ] Navigation
-
-### Phase 2
-
-- [ ] Customers
-- [ ] Credit Sales
-- [ ] Repayments
-
-### Phase 3
-
-- [ ] Reports
-- [ ] Notifications
-- [ ] Settings
-
-### Phase 4
-
-- [ ] API Integration
-- [ ] Testing
-- [ ] Deployment
+- 📱 Mobile First
+- 🧩 Component Reusability
+- ♿ Accessibility
+- ✨ Simplicity
+- ⚡ Performance
+- 🏗 Clean Architecture
+- 🎨 Consistent Design System
 
 ---
 
-## Contributing
+# Roadmap
 
-1. Fork the repository.
-2. Create a feature branch.
+## ✅ Phase 1
+
+- Authentication
+- Design System
+- Reusable Form Components
+
+## 🚧 Phase 2
+
+- Dashboard
+- Sidebar
+- Navigation
+- Dashboard Widgets
+
+## ⏳ Phase 3
+
+- Customers
+- Credit Sales
+- Repayments
+
+## ⏳ Phase 4
+
+- Reports
+- Settings
+- Notifications
+
+## ⏳ Phase 5
+
+- Backend Integration
+- API Layer
+- Authentication
+- Testing
+- Deployment
+
+---
+
+# Contributing
+
+## 1. Fork the repository
+
+## 2. Create a feature branch
 
 ```bash
 git checkout -b feature/your-feature
 ```
 
-3. Commit using Conventional Commits.
+## 3. Commit your changes
 
 ```bash
-git commit -m "feat: add your feature"
+git commit -m "feat: your feature"
 ```
 
-4. Push your branch.
+## 4. Push your branch
 
 ```bash
 git push origin feature/your-feature
 ```
 
-5. Open a Pull Request.
+## 5. Open a Pull Request
 
 ---
 
-## License
+# Maintainer
 
-This project is currently private. Licensing information will be added before public release.
+<!-- **David Emulo**
 
----
-
-## Maintainers
-
-- David Emulo — Frontend Developer
+Frontend Engineer -->
 
 ---
 

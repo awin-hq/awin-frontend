@@ -53,7 +53,7 @@ export function OtpForm() {
     */
 
 
-    router.push("/pin");
+    router.push("/success");
   }
 
 

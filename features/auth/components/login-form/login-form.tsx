@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 import styles from "./login-form.module.css";
@@ -15,11 +16,25 @@ type LoginFormData = {
 };
 
 export function LoginForm() {
-  const { register, handleSubmit } = useForm<LoginFormData>();
+  const router = useRouter();
 
-  function onSubmit(data: LoginFormData) {
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<LoginFormData>({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = async (data: LoginFormData) => {
     console.log(data);
-  }
+
+    // TODO: Replace with login API call
+    router.push("/dashboard");
+  };
 
   return (
     <form
@@ -31,13 +46,16 @@ export function LoginForm() {
           label="Email Address"
           placeholder="Enter your email"
           type="email"
+          autoComplete="email"
           {...register("email")}
         />
       </div>
 
       <div className={styles.field}>
         <div className={styles.passwordHeader}>
-          <label>Password</label>
+          <label className={styles.passwordLabel}>
+            Password
+          </label>
 
           <Link
             href="/forgot-password"
@@ -50,13 +68,17 @@ export function LoginForm() {
         <PasswordInput
           label=""
           placeholder="Enter your password"
+          autoComplete="current-password"
           {...register("password")}
         />
       </div>
 
       <div className={styles.button}>
-        <PrimaryButton type="submit">
-          Continue
+        <PrimaryButton
+          type="submit"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? "Signing In..." : "Continue"}
         </PrimaryButton>
       </div>
     </form>

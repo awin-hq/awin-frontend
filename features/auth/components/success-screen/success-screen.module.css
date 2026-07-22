@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  border-radius: 100%;
+  margin-bottom: 48px;
+}
+
+.text {
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.1;
+
+  color: #1A1A1A;
+}
+
+.title span {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.container button {
+    align-self: center;
+    width: 80%;
+}

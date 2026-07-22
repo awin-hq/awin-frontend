@@ -7,6 +7,7 @@ import styles from "./register-form.module.css";
 
 import { TextInput } from "@/components/forms/text-input";
 import { PasswordInput } from "@/components/forms/password-input";
+import { PasswordStrength } from "@/components/forms/password-strength";
 import { PrimaryButton } from "@/components/buttons/primary-button";
 
 type RegisterFormData = {
@@ -20,7 +21,21 @@ type RegisterFormData = {
 export function RegisterForm() {
   const router = useRouter();
 
-  const { register, handleSubmit } = useForm<RegisterFormData>();
+  const {
+    register,
+    watch,
+    handleSubmit,
+  } = useForm<RegisterFormData>({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+  });
+
+  const password = watch("password");
 
   function onSubmit(data: RegisterFormData) {
     console.log(data);
@@ -62,10 +77,12 @@ export function RegisterForm() {
 
       <div className={styles.field}>
         <PasswordInput
-          label="Password"
+          label="Create Password"
           placeholder="Create a password"
           {...register("password")}
         />
+
+        <PasswordStrength password={password} />
       </div>
 
       <div className={styles.field}>
