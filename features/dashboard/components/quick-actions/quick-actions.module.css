@@ -1,0 +1,53 @@
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  border-radius: 50%;
+
+  transition: transform 0.2s ease;
+}
+
+.action:hover .circle {
+  transform: translateY(-2px);
+}
+
+.violet {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.green {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.peach {
+  background: #ffe4d6;
+  color: var(--color-primary);
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}

@@ -1,0 +1,198 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--color-text);
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.iconButton:hover {
+  background: var(--color-border);
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 24px;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.phone {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.balanceCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  padding: 24px;
+  margin-bottom: 16px;
+
+  background: #eef0f6;
+  border-radius: var(--radius-lg);
+}
+
+.balanceLabel {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.balanceValue {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  margin-bottom: 28px;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 16px;
+
+  background: #eef0f6;
+  border-radius: var(--radius-lg);
+}
+
+.statLabel {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.statValue {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.statAmount {
+  color: var(--color-primary);
+}
+
+.transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.emptyCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 20px;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.emptyIcon {
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+}
+
+.emptyTitle {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.emptyText {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.txList {
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+}
+
+.txItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 4px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.txInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.txItemName {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.txDate {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.txAmount {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-primary);
+}

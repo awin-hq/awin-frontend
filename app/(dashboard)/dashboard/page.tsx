@@ -1,11 +1,5 @@
+import { HomeView } from "@/features/dashboard/components/home-view";
+
 export default function DashboardPage() {
-  return (
-    <main
-      style={{
-        padding: 40,
-      }}
-    >
-      Dashboard works 🚀
-    </main>
-  );
+  return <HomeView />;
 }
