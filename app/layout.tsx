@@ -3,26 +3,26 @@ import localFont from "next/font/local";
 
 import "@/styles/index.css";
 
-const neueMontreal = localFont({
+const sfPro = localFont({
   src: [
     {
-      path: "../public/assets/fonts/NeueMontreal-Light.otf",
-      weight: "300",
-    },
-    {
-      path: "../public/assets/fonts/NeueMontreal-Regular.otf",
+      path: "../public/assets/fonts/SF-Pro-Display-Regular.otf",
       weight: "400",
+      style: "normal",
     },
     {
-      path: "../public/assets/fonts/NeueMontreal-Medium.otf",
+      path: "../public/assets/fonts/SF-Pro-Display-Medium.otf",
       weight: "500",
+      style: "normal",
     },
     {
-      path: "../public/assets/fonts/NeueMontreal-Bold.otf",
+      path: "../public/assets/fonts/SF-Pro-Display-Bold.otf",
       weight: "700",
+      style: "normal",
     },
   ],
-  variable: "--font-neue",
+  variable: "--font-sf-pro",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={neueMontreal.variable}>
+      <body className={sfPro.variable}>
         {children}
       </body>
     </html>

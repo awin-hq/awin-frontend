@@ -1,0 +1,12 @@
+.phone {
+  position: relative;
+
+  width: 360px;
+  aspect-ratio: 9 / 19;
+
+  margin: 0 auto;
+}
+
+.image {
+  object-fit: contain;
+}

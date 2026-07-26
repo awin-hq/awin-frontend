@@ -9,7 +9,7 @@ export function Logo({ className }: LogoProps) {
   return (
     <div className={`${styles.logo} ${className ?? ""}`}>
       <Image
-        src="/assets/logo/logo.png"
+        src="/assets/logo/logo-new.svg"
         alt="AWÍN logo"
         width={48}
         height={24}
