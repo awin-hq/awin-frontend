@@ -1,31 +1,25 @@
-import {
-  Bell,
-  BookOpen,
-  Users,
-} from "lucide-react";
-
 import { FeatureCard } from "../../components/feature-card";
 
 import styles from "./features-section.module.css";
 
 const FEATURES = [
   {
-    icon: <BookOpen size={30} />,
-    title: "Track Every Credit Sale",
+    icon: "/icons/flower.svg",
+    title: "Record Sales in Seconds",
     description:
-      "Record every customer purchase in seconds and keep a permanent digital record that never gets lost.",
+      "Instead of flipping through pages, AWÍN keeps all your customer debts in one secure place.",
   },
   {
-    icon: <Bell size={30} />,
-    title: "Automatic Payment Reminders",
+    icon: "/icons/flower.svg",
+    title: "Know Who Owes You",
     description:
-      "Reduce forgotten debts by sending timely reminders and following up with customers effortlessly.",
+      "Keep a complete record of every customer's outstanding balance. No more guessing or flipping through notebooks.",
   },
   {
-    icon: <Users size={30} />,
-    title: "Manage Every Customer",
+    icon: "/icons/flower.svg",
+    title: "Track Payments",
     description:
-      "View balances, repayment history, and customer activity all in one place.",
+      "Monitor every repayment coming in. See paid, pending and overdue balances at a glance.",
   },
 ];
 
@@ -40,16 +34,14 @@ export function FeaturesSection() {
           Features
         </span>
 
-        <h2>
-          Meet AWÍN, the Smarter Way
-          <br />
-          to Manage Customer Credit
+        <h2 className={styles.heading}>
+          Meet <span className={styles.highlight}>AWÍN</span>, The Smarter Way
+          to Manage Customer Credit.
         </h2>
 
-        <p>
-          Everything you need to record credit sales,
-          follow repayments, and stay in control of
-          your business.
+        <p className={styles.subtitle}>
+          Instead of flipping through pages, AWÍN keeps all your customer debts
+          in one secure place.
         </p>
 
         <div className={styles.grid}>
