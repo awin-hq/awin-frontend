@@ -19,8 +19,7 @@ export function HeroSection() {
         </h1>
 
         <p className={styles.description}>
-          AWÍN is the digital credit notebook built for Nigerian traders.
-          Record credit sales, know exactly who owes you,
+          Track exactly who owes you,
           receive payment reminders, and recover more money
           without the stress of paper records.
         </p>
