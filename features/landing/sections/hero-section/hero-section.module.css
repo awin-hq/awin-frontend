@@ -65,10 +65,11 @@
 }
 
 .description {
-  max-width: 620px;
-
-  color: var(--color-text-secondary);
-
+  color: var(--Black-200, #65666B);
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
   margin-bottom: 40px;
 }
 
@@ -134,6 +135,20 @@
   .content {
     width: calc(100% - 32px);
   }
+
+  .title {
+  font-size: 32px;
+  margin-bottom: 24px;
+  }
+
+  .highlight {
+    padding: 0 12px;
+  }
+
+  .description {
+    font-size: 16px;
+
+}
 
   .actions {
     width: 100%;
