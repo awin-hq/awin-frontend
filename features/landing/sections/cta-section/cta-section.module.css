@@ -1,69 +1,147 @@
-.section{
-padding:120px 24px;
-background:#fafafa;
+.section {
+  width: 100%;
+
+  padding: 100px 24px;
+
+  background: #FFE89A;
 }
 
-.card{
-width:min(1180px,100%);
-margin:0 auto;
+.container {
+  max-width: 760px;
 
-background:linear-gradient(135deg,#FF6A00,#FF944D);
+  margin: 0 auto;
 
-border-radius:32px;
-
-padding:80px 48px;
-
-text-align:center;
-
-color:white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-.card span{
-font-weight:600;
-opacity:.9;
+.heading {
+  margin: 0;
+
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.05;
+
+  color: #111111;
 }
 
-.card h2{
-margin-top:20px;
+.description {
+  margin-top: 22px;
 
-font-size:clamp(38px,5vw,60px);
+  max-width: 620px;
 
-line-height:1.15;
+  font-size: 16px;
+
+  color: #4B5563;
 }
 
-.card p{
-margin:28px auto;
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
 
-max-width:700px;
-
-line-height:1.8;
-
-opacity:.92;
+  margin-top: 42px;
 }
 
-.button{
-display:inline-flex;
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-align-items:center;
-justify-content:center;
+  height: 56px;
 
-height:56px;
+  padding: 0 32px;
 
-padding:0 36px;
+  border-radius: 999px;
 
-border-radius:999px;
+  font-size: 16px;
+  font-weight: 600;
 
-background:white;
+  text-decoration: none;
 
-color:#FF6A00;
-
-font-weight:700;
-
-text-decoration:none;
-
-transition:.25s;
+  transition: all .25s ease;
 }
 
-.button:hover{
-transform:translateY(-2px);
+/* Orange button */
+
+.primaryButton {
+  background: #FF6B00;
+  color: #FFFFFF;
+}
+
+.primaryButton:hover {
+  background: #E86100;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 28px rgba(255,107,0,.25);
+}
+
+/* Outline button */
+
+.secondaryButton {
+  background: transparent;
+
+  color: #FF6B00;
+
+  border: 1.5px solid #FF6B00;
+}
+
+.secondaryButton:hover {
+  background: #FF6B00;
+  color: #FFFFFF;
+}
+
+/* ---------------------- */
+/* Tablet */
+/* ---------------------- */
+
+@media (max-width: 768px) {
+
+  .section {
+    padding: 90px 24px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .actions {
+    margin-top: 34px;
+  }
+}
+
+/* ---------------------- */
+/* Mobile */
+/* ---------------------- */
+
+@media (max-width: 576px) {
+
+  .section {
+    padding: 72px 20px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .actions {
+    width: 100%;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
 }

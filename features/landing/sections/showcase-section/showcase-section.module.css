@@ -70,12 +70,71 @@
   justify-content: center;
 }
 
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 36px;
+
+  width: 150px;
+  height: 52px;
+
+  border-radius: 999px;
+
+  background: #ff6b00;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.button:hover {
+  background: #e86100;
+
+  transform: translateY(-2px);
+}
+
 @media (max-width: 960px) {
 
+  .section {
+    padding: 50px 0;
+  }
+
+  .left h2 {
+  font-size: 24px;
+
+  font-weight: 500;
+}
+
   .container {
+    width: calc(100% - 32px); /* 16px left & right */
+    margin: 0 auto;
+
     grid-template-columns: 1fr;
 
-    gap: 64px;
+    gap: 80px; /* Space between content and phone mockup */
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .left h2,
+  .left p {
+    max-width: 100%;
+  }
+
+  .right {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
   }
 
   .stats {

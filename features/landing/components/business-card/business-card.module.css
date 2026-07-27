@@ -1,7 +1,7 @@
 .card {
-  padding: 28px;
+  padding: 20px;
 
-  border-radius: 24px;
+  border-radius: 16px;
 
   border: 1px solid #ececec;
 
@@ -25,9 +25,18 @@
 }
 
 .card p {
-  margin-top: 14px;
-
   color: #666;
 
-  line-height: 1.8;
+}
+
+@media (max-width: 960px) {
+
+  .card h3 {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 500px;
+
+  color: #222;
+}
 }

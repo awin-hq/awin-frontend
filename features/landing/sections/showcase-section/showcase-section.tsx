@@ -1,7 +1,6 @@
 import styles from "./showcase-section.module.css";
 
 import { PhoneMockup } from "../../components/phone-mockup";
-import { ShowcaseCard } from "../../components/showcase-card";
 
 export function ShowcaseSection() {
   return (
@@ -22,27 +21,7 @@ export function ShowcaseSection() {
             <br /> <br /> Steps simplified in easy ways.
           </p>
 
-          <div className={styles.stats}>
-            <ShowcaseCard
-              title="Customers"
-              value="1,284"
-            />
-
-            <ShowcaseCard
-              title="Outstanding Credit"
-              value="₦2.4M"
-            />
-
-            <ShowcaseCard
-              title="Recovered"
-              value="91%"
-            />
-
-            <ShowcaseCard
-              title="Transactions"
-              value="8,450"
-            />
-          </div>
+          
         </div>
 
         <div className={styles.right}>

@@ -1,39 +1,25 @@
 .section {
-  padding: 120px 0;
-
-  background: #fafafa;
+  padding: 50px 0;
 }
 
 .container {
-  width: min(900px, calc(100% - 48px));
-
+  width: min(760px, calc(100% - 40px));
   margin: 0 auto;
 }
 
-.badge {
-  display: inline-flex;
+.heading {
+  text-align: center;
 
-  padding: 8px 18px;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 56px;
 
-  border-radius: 999px;
+  color: #111111;
 
-  background: #FFF5EE;
-
-  color: #FF6A00;
-
-  font-weight: 600;
-}
-
-.container h2 {
-  margin-top: 24px;
-
-  font-size: clamp(36px, 4vw, 52px);
-
-  line-height: 1.2;
-
-  color: #222;
+  margin-bottom: 56px;
 }
 
 .list {
-  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
 }

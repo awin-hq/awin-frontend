@@ -4,24 +4,29 @@ import styles from "./faq-section.module.css";
 
 const FAQS = [
   {
-    question: "Is AWÍN free to use?",
+    question: "Is Àwin free?",
     answer:
-      "Yes. You can start using AWÍN for free, with premium features available as your business grows.",
+      "Yes. You can start using Àwin for free. Premium plans are available as your business grows.",
   },
   {
-    question: "Can I record repayments?",
+    question: "Do I need accounting knowledge?",
     answer:
-      "Absolutely. AWÍN lets you record full and partial repayments while automatically updating customer balances.",
+      "No. Àwin is designed for everyday traders and is very easy to use.",
   },
   {
-    question: "Will my data be secure?",
+    question: "Can I use Àwin on my phone?",
     answer:
-      "Yes. Your business records are securely stored and protected using modern security practices.",
+      "Yes. Àwin works perfectly on phones, tablets and desktop devices.",
   },
   {
-    question: "Can I use AWÍN on my phone?",
+    question: "Is my information secure?",
     answer:
-      "Yes. AWÍN is designed mobile-first so it works beautifully on smartphones and tablets.",
+      "Absolutely. Your customer records are securely stored and protected.",
+  },
+  {
+    question: "What happens if a customer pays?",
+    answer:
+      "Simply record the repayment and the customer's balance updates automatically.",
   },
 ];
 
@@ -32,11 +37,7 @@ export function FAQSection() {
       className={styles.section}
     >
       <div className={styles.container}>
-        <span className={styles.badge}>
-          Frequently Asked Questions
-        </span>
-
-        <h2>Everything You Need to Know</h2>
+        <h2 className={styles.heading}>FAQs</h2>
 
         <div className={styles.list}>
           {FAQS.map((faq) => (

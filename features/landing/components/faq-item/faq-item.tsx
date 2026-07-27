@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
 import styles from "./faq-item.module.css";
 
@@ -19,20 +19,22 @@ export function FAQItem({
   return (
     <article className={styles.item}>
       <button
-        type="button"
         className={styles.trigger}
-        onClick={() => setOpen((prev) => !prev)}
+        onClick={() => setOpen(!open)}
       >
         <span>{question}</span>
 
-        <ChevronDown
-          size={20}
-          className={open ? styles.rotate : ""}
-        />
+        <div className={styles.icon}>
+          {open ? (
+            <Minus size={14} />
+          ) : (
+            <Plus size={14} />
+          )}
+        </div>
       </button>
 
       <div
-        className={`${styles.content} ${
+        className={`${styles.answer} ${
           open ? styles.open : ""
         }`}
       >

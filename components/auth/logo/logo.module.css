@@ -1,9 +1,23 @@
 .logo {
-  display: flex;
-  justify-content: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.logo img {
+.logo img,
+.logo svg {
+  display: block;
+
   width: auto;
-  height: auto;
+  height: 32px;
+}
+
+@media (max-width: 768px) {
+  .logo img,
+  .logo svg {
+    height: 24px;
+  }
 }

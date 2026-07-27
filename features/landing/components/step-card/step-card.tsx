@@ -5,19 +5,30 @@ import styles from "./step-card.module.css";
 type StepCardProps = {
   number: string;
   title: string;
-  description: string;
   image: string;
+  rotation?: string;
 };
 
 export function StepCard({
   number,
   title,
-  description,
   image,
+  rotation = "0deg",
 }: StepCardProps) {
   return (
     <article className={styles.card}>
-      <div className={styles.imageWrapper}>
+      <span className={styles.number}>
+        {number}
+      </span>
+
+      <div
+        className={styles.imageWrapper}
+        style={
+          {
+            "--rotation": rotation,
+          } as React.CSSProperties
+        }
+      >
         <Image
           src={image}
           alt={title}
@@ -26,13 +37,9 @@ export function StepCard({
         />
       </div>
 
-      <span className={styles.number}>
-        {number}
-      </span>
-
-      <h3>{title}</h3>
-
-      <p>{description}</p>
+      <p className={styles.title}>
+        {title}
+      </p>
     </article>
   );
 }
