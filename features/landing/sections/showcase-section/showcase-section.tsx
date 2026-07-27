@@ -1,7 +1,6 @@
 import styles from "./showcase-section.module.css";
 
 import { PhoneMockup } from "../../components/phone-mockup";
-import { ShowcaseCard } from "../../components/showcase-card";
 
 export function ShowcaseSection() {
   return (
@@ -13,38 +12,16 @@ export function ShowcaseSection() {
           </span>
 
           <h2>
-            Everything You Need
-            <br />
-            In One Dashboard
+            Everything You Need to Manage
+            Customers Credit
           </h2>
 
           <p>
-            Track outstanding balances, customer activity,
-            repayments and business performance from one
-            beautifully designed dashboard.
+            From recording transactions to recovering payments faster, our platform helps you stay organized and in control of every customer account.
+            <br /> <br /> Steps simplified in easy ways.
           </p>
 
-          <div className={styles.stats}>
-            <ShowcaseCard
-              title="Customers"
-              value="1,284"
-            />
-
-            <ShowcaseCard
-              title="Outstanding Credit"
-              value="₦2.4M"
-            />
-
-            <ShowcaseCard
-              title="Recovered"
-              value="91%"
-            />
-
-            <ShowcaseCard
-              title="Transactions"
-              value="8,450"
-            />
-          </div>
+          
         </div>
 
         <div className={styles.right}>

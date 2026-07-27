@@ -5,29 +5,33 @@ import styles from "./cta-section.module.css";
 export function CTASection() {
   return (
     <section className={styles.section}>
-      <div className={styles.card}>
-        <span>
-          Ready to simplify your business?
-        </span>
-
-        <h2>
-          Stop Recording Credit Sales
+      <div className={styles.container}>
+        <h2 className={styles.heading}>
+          Stop Losing Money to Forgotten
           <br />
-          in Exercise Books.
+          Credit Sales.
         </h2>
 
-        <p>
-          Join hundreds of Nigerian traders already
-          using AWÍN to keep track of customer credit
-          and repayments.
+        <p className={styles.description}>
+          Join Nigerian traders who are replacing paper notebooks with a
+          faster, smarter way to manage customer debts.
         </p>
 
-        <Link
-          href="/register"
-          className={styles.button}
-        >
-          Create Free Account
-        </Link>
+        <div className={styles.actions}>
+          <Link
+            href="/register"
+            className={styles.primaryButton}
+          >
+            Get Started
+          </Link>
+
+          <Link
+            href="/demo"
+            className={styles.secondaryButton}
+          >
+            Book a Demo
+          </Link>
+        </div>
       </div>
     </section>
   );

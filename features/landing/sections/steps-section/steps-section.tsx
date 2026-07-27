@@ -4,32 +4,28 @@ import styles from "./steps-section.module.css";
 
 const STEPS = [
   {
-    number: "01",
-    title: "Create Your Account",
-    description:
-      "Sign up in minutes and securely set up your business profile.",
-    image: "/assets/landing/step1.webp",
+    number: "1",
+    title: "Create your free account.",
+    image: "/assets/landing/step-1.png",
+    rotation: "-6deg",
   },
   {
-    number: "02",
-    title: "Add Customers",
-    description:
-      "Save customer information and build your digital customer book.",
-    image: "/assets/landing/step2.webp",
+    number: "2",
+    title: "Add your customers.",
+    image: "/assets/landing/step-2.png",
+    rotation: "6deg",
   },
   {
-    number: "03",
-    title: "Record Credit Sales",
-    description:
-      "Capture every sale, payment, and balance instantly.",
-    image: "/assets/landing/step3.webp",
+    number: "3",
+    title: "Record every credit sale.",
+    image: "/assets/landing/step-3.png",
+    rotation: "-6deg",
   },
   {
-    number: "04",
-    title: "Track Repayments",
-    description:
-      "Monitor outstanding debts and receive repayments with confidence.",
-    image: "/assets/landing/step4.webp",
+    number: "4",
+    title: "Track repayments and get paid faster.",
+    image: "/assets/landing/step-4.png",
+    rotation: "6deg",
   },
 ];
 
@@ -40,20 +36,11 @@ export function StepsSection() {
       className={styles.section}
     >
       <div className={styles.container}>
-        <span className={styles.badge}>
-          How It Works
-        </span>
-
         <h2>
-          Get Started
+          Get Started in
           <br />
-          in Four Simple Steps
+          Four Simple Steps
         </h2>
-
-        <p>
-          AWÍN is designed to be simple enough for every trader.
-          Start recording your credit sales in just a few minutes.
-        </p>
 
         <div className={styles.grid}>
           {STEPS.map((step) => (

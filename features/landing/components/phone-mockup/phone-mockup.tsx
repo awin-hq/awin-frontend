@@ -6,7 +6,7 @@ export function PhoneMockup() {
   return (
     <div className={styles.phone}>
       <Image
-        src="/assets/landing/dashboard-phone.webp"
+        src="/assets/landing/Phone mockups.png"
         alt="AWÍN Dashboard"
         fill
         priority

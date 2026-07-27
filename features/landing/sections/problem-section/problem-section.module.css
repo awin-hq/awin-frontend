@@ -130,25 +130,48 @@
 
 @media (max-width: 768px) {
   .container {
-    width: calc(100% - 32px);
+    width: calc(100% - 32px); /* 16px left & right */
   }
 
   .section {
     padding: 72px 0;
   }
 
-  .title {
-    margin-bottom: 36px;
+  .grid {
+    gap: 32px;
+  }
 
-    font-size:24px;
+  .title {
+    font-size: 24px;
+
+    margin-bottom: 28px;
+
+    text-align: left;
+
+    margin-inline: 0;
+  }
+
+  .imageWrapper {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .content {
+    align-items: flex-start;
+
+    text-align: left;
   }
 
   .content p {
     font-size: 16px;
+    line-height: 1.7;
+
+    text-align: left;
   }
 
   .button {
-    width: 100%;
-    max-width: 220px;
+    width: 150px;
+
+    align-self: flex-start;
   }
 }

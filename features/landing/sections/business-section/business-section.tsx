@@ -43,10 +43,7 @@ export function BusinessSection() {
           </h2>
 
           <p>
-            Whether you run a retail shop, supermarket,
-            pharmacy, or wholesale business,
-            AWÍN helps you stay in control of every
-            customer credit transaction.
+            Whether you are a market trader, shop owner, food vendor, or wholesaler, our platform helps you stay on top of customer credit. Spend less time managing records and more time growing your business.
           </p>
 
           <div className={styles.grid}>
@@ -61,7 +58,7 @@ export function BusinessSection() {
 
         <div className={styles.right}>
           <Image
-            src="/assets/landing/business.webp"
+            src="/assets/landing/lady-paying-local-market-woman.png"
             alt="Business owner"
             fill
             className={styles.image}

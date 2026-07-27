@@ -102,7 +102,7 @@
   align-items: center;
   justify-content: flex-start;
 
-  height: 100%;
+  /* height: 20px; */
 
   text-decoration: none;
 
@@ -116,7 +116,7 @@
   display: block;
 
   width: auto;
-  height: 42px;
+  height: 32px;
 }
 
 /* ========================= */
@@ -224,45 +224,42 @@
 
 .mobileMenu {
   position: fixed;
-
   inset: 0;
 
-  background: rgba(255,255,255,.97);
-
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: #fff;
 
   z-index: 9998;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   opacity: 0;
   visibility: hidden;
 
-  transform: translateY(-20px);
+  transform: translateY(-16px);
 
   transition:
-    opacity .35s ease,
-    transform .35s ease,
-    visibility .35s;
+    opacity .3s ease,
+    transform .3s ease,
+    visibility .3s;
+
+  padding: 130px 16px 40px;   /* increased */
+
+  display: flex;
+  flex-direction: column;
 }
 
 .mobileMenuOpen {
   opacity: 1;
   visibility: visible;
-
   transform: translateY(0);
 }
 
 .mobileNav {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 
-  align-items: center;
+  gap: 28px;
 
-  gap: 36px;
+  width: 100%;
 }
 
 .mobileNav a {
@@ -270,10 +267,11 @@
 
   text-decoration: none;
 
-  font-size: 26px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
 
-  transition: color .25s ease;
+  transition: color .2s;
 }
 
 .mobileNav a:hover {
@@ -281,25 +279,35 @@
 }
 
 .mobileButton {
-  margin-top: 18px;
-
-  width: 220px;
-  height: 56px;
-
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+
+  width: 100%;
+  height: 52px;
 
   border-radius: 999px;
 
   background: #FF6A00;
 
-  color: #FFFFFF;
-
+  color: #FFFFFF !important;
   text-decoration: none;
 
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
+
+  transition: .25s ease;
+}
+
+.mobileButton:hover {
+  background: #ef6000;
+  color: #FFFFFF !important;
+}
+
+.mobileButton:visited,
+.mobileButton:active,
+.mobileButton:focus {
+  color: #FFFFFF !important;
 }
 
 /* ========================= */
@@ -310,7 +318,7 @@
 
   .logo img,
   .logo svg {
-    height: 38px;
+    height: 48px;
   }
 
   .header {
@@ -348,9 +356,10 @@
 
 @media (max-width: 576px) {
 
-   .logo img,
+  .logo img,
   .logo svg {
-    height: 34px;
+    width: auto;
+    height: 24px;
   }
 
   .header {
@@ -364,12 +373,6 @@
 
     padding: 0 14px;
   }
-
-  .logo img {
-    width: 36px;
-    height: 36px;
-  }
-
   .mobileNav a {
     font-size: 22px;
   }
