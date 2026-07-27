@@ -1,5 +1,5 @@
 .section {
-  padding: 120px 0;
+  padding: 50px 0;
 }
 
 .container {
@@ -11,35 +11,43 @@
 
   grid-template-columns: 1fr 420px;
 
-  gap: 80px;
+  gap: 100px;
 
   align-items: center;
 }
 
 .badge {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
-  padding: 8px 18px;
+  width: fit-content;
 
-  background: #FFF5EE;
-
-  color: #FF6A00;
+  padding: 10px 20px;
 
   border-radius: 999px;
 
-  font-weight: 600;
+  background: #FFF8DF;
+
+  color: #D58B00;
+
+  font-size: 14px;
+  font-weight: 500;
+
 }
 
 .left h2 {
   margin-top: 24px;
+  max-width: 480px;
 
-  font-size: clamp(34px, 4vw, 52px);
+  font-size: 32px;
 
-  line-height: 1.15;
+  font-weight: 500;
 }
 
 .left p {
-  margin-top: 24px;
+  margin-top: 16px;
+  max-width: 480px;
 
   line-height: 1.8;
 
@@ -47,7 +55,7 @@
 }
 
 .stats {
-  margin-top: 48px;
+  margin-top: 20px;
 
   display: grid;
 

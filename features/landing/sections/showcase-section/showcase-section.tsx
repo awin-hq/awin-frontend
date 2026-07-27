@@ -13,15 +13,13 @@ export function ShowcaseSection() {
           </span>
 
           <h2>
-            Everything You Need
-            <br />
-            In One Dashboard
+            Everything You Need to Manage
+            Customers Credit
           </h2>
 
           <p>
-            Track outstanding balances, customer activity,
-            repayments and business performance from one
-            beautifully designed dashboard.
+            From recording transactions to recovering payments faster, our platform helps you stay organized and in control of every customer account.
+            <br /> <br /> Steps simplified in easy ways.
           </p>
 
           <div className={styles.stats}>
