@@ -29,7 +29,7 @@ export default function AddCustomersForm() {
             customerName={fullName}
             onRecordCredit={() =>
                 router.push(
-                    `/dashboard/credit-sales/add?name=${encodeURIComponent(fullName)}&phone=${encodeURIComponent(phoneNumber)}`
+                    `/customers`
                 )
             }
             onViewCustomer={() =>
