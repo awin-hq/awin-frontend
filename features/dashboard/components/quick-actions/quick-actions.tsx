@@ -4,24 +4,9 @@ import { ArrowUpRight, UserPlus, Tags } from "lucide-react";
 import styles from "./quick-actions.module.css";
 
 const ACTIONS = [
-  {
-    href: "/credit-sales",
-    label: "Record Credit",
-    icon: ArrowUpRight,
-    variant: "violet",
-  },
-  {
-    href: "/customers",
-    label: "Add Debtor",
-    icon: UserPlus,
-    variant: "green",
-  },
-  {
-    href: "/customers",
-    label: "View Creditors",
-    icon: Tags,
-    variant: "peach",
-  },
+  { href: "/customers/add", label: "Add Customer", icon: UserPlus, variant: "green" },
+  { href: "/customers", label: "Record Credit", icon: ArrowUpRight, variant: "violet" },
+  { href: "/customers", label: "View Customers", icon: Tags, variant: "peach" },
 ] as const;
 
 export function QuickActions() {
