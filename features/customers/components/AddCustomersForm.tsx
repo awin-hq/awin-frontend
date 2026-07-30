@@ -32,11 +32,7 @@ export default function AddCustomersForm() {
                     `/customers`
                 )
             }
-            onViewCustomer={() =>
-                router.push(
-                    `/dashboard/customers/profile?name=${encodeURIComponent(fullName)}&phone=${encodeURIComponent(phoneNumber)}`
-                )
-                }
+            onViewCustomer={() => router.push(`/customers`)}
             />
         );
         }
