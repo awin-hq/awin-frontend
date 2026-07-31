@@ -1,5 +1,6 @@
 "use client";
 
+<<<<<<< HEAD
 import { useRouter } from "next/navigation";
 import { ChevronLeft, CalendarDays } from "lucide-react";
 
@@ -26,12 +27,32 @@ export function CreditSummaryView() {
       })),
     []
   );
+=======
+import { useState } from "react";
+import { Menu } from "lucide-react";
+
+import { Avatar } from "@/components/dashboard/avatar";
+import { SegmentedTabs } from "@/components/dashboard/segmented-tabs";
+import { PrimaryButton } from "@/components/buttons/primary-button";
+
+import styles from "./credit-summary-view.module.css";
+
+const TABS = ["Due Today", "Overdue Payments", "Weekly Summary"] as const;
+
+type CreditSummaryViewProps = {
+  ownerName: string;
+};
+
+export function CreditSummaryView({ ownerName }: CreditSummaryViewProps) {
+  const [tab, setTab] = useState<string>("Weekly Summary");
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 
   return (
     <div className={styles.view}>
       <header className={styles.header}>
         <button
           type="button"
+<<<<<<< HEAD
           className={styles.iconButton}
           onClick={() => router.back()}
           aria-label="Go back"
@@ -90,6 +111,32 @@ export function CreditSummaryView() {
             }
           />
         )}
+=======
+          className={styles.menuButton}
+          aria-label="Open menu"
+        >
+          <Menu size={22} aria-hidden="true" />
+        </button>
+
+        <div className={styles.user}>
+          <span className={styles.name}>{ownerName}</span>
+          <Avatar name={ownerName} size="md" />
+        </div>
+      </header>
+
+      <div className={styles.body}>
+        <SegmentedTabs tabs={TABS} value={tab} onChange={setTab} />
+
+        <div className={styles.placeholder} role="status">
+          <span className={styles.placeholderText}>
+            No {tab.toLowerCase()} to show yet.
+          </span>
+        </div>
+
+        <div className={styles.action}>
+          <PrimaryButton type="button">Add Credit</PrimaryButton>
+        </div>
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
       </div>
     </div>
   );

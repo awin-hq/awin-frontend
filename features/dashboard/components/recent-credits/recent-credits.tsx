@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Info } from "lucide-react";
 
 import { Avatar } from "@/components/dashboard/avatar";
@@ -14,6 +15,14 @@ export type RecentCredit = {
   date?: string;
 };
 
+=======
+import { Avatar } from "@/components/dashboard/avatar";
+import { formatNaira } from "@/lib/format";
+import type { RecentCredit } from "@/features/dashboard/data";
+
+import styles from "./recent-credits.module.css";
+
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 type RecentCreditsProps = {
   credits: RecentCredit[];
 };
@@ -23,6 +32,7 @@ export function RecentCredits({ credits }: RecentCreditsProps) {
     <section className={styles.section}>
       <h3 className={styles.title}>Recent Credits</h3>
 
+<<<<<<< HEAD
       {credits.length > 0 ? (
         <ul className={styles.list}>
           {credits.map((credit) => (
@@ -54,6 +64,27 @@ export function RecentCredits({ credits }: RecentCreditsProps) {
           description="Start by recording a credit sale for this customer."
         />
       )}
+=======
+      <ul className={styles.list}>
+        {credits.map((credit) => (
+          <li key={credit.id} className={styles.item}>
+            <Avatar name={credit.name} />
+
+            <div className={styles.info}>
+              <span className={styles.name}>{credit.name}</span>
+              <span className={styles.meta}>{credit.item}</span>
+            </div>
+
+            <div className={styles.right}>
+              <span className={styles.amount}>
+                - {formatNaira(credit.amount, 2)} NGN
+              </span>
+              <span className={styles.date}>{credit.date}</span>
+            </div>
+          </li>
+        ))}
+      </ul>
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
     </section>
   );
 }

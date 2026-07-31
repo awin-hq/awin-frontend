@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 
 import { useMemo } from "react";
@@ -7,10 +8,13 @@ import { getStoredMerchant } from "@/lib/session";
 import { customersService, notificationsService } from "@/services";
 import type { Customer } from "@/services/types";
 
+=======
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 import { DashboardHeader } from "@/features/dashboard/components/dashboard-header";
 import { BalanceCard } from "@/features/dashboard/components/balance-card";
 import { QuickActions } from "@/features/dashboard/components/quick-actions";
 import { ReminderBanner } from "@/features/dashboard/components/reminder-banner";
+<<<<<<< HEAD
 import {
   RecentCredits,
   type RecentCredit,
@@ -74,19 +78,41 @@ export function HomeView() {
       <DashboardHeader
         name={data?.name ?? "Chiege"}
         notificationCount={data?.unread ?? 0}
+=======
+import { RecentCredits } from "@/features/dashboard/components/recent-credits";
+import { DASHBOARD } from "@/features/dashboard/data";
+
+import styles from "./home-view.module.css";
+
+export function HomeView() {
+  return (
+    <div className={styles.view}>
+      <DashboardHeader
+        name={DASHBOARD.ownerName}
+        notificationCount={DASHBOARD.notificationCount}
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
       />
 
       <div className={styles.body}>
         <BalanceCard
+<<<<<<< HEAD
           balance={outstandingBalance}
           debtorCount={debtorCount}
+=======
+          balance={DASHBOARD.outstandingBalance}
+          debtorCount={DASHBOARD.debtorCount}
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
         />
 
         <QuickActions />
 
         <ReminderBanner />
 
+<<<<<<< HEAD
         <RecentCredits credits={recentCredits} />
+=======
+        <RecentCredits credits={DASHBOARD.recentCredits} />
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
       </div>
     </div>
   );

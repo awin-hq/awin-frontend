@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
 
+<<<<<<< HEAD
   padding: 20px;
 
   background: linear-gradient(135deg, #ff7a1a 0%, #f0600d 100%);
@@ -16,10 +17,19 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+=======
+  padding: 24px 20px 28px;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 }
 
 .label {
   font-size: 14px;
+<<<<<<< HEAD
   opacity: 0.92;
 }
 
@@ -88,4 +98,43 @@
   mask-image: linear-gradient(to left, #000 0%, transparent 100%);
 
   pointer-events: none;
+=======
+  color: var(--color-text-secondary);
+}
+
+.value {
+  margin: 4px 0 2px;
+
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.debtors {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+/* Decorative Adire-inspired strip along the bottom of the card. */
+.pattern {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 14px;
+
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-primary) 0,
+    var(--color-primary) 6px,
+    #1e1e1e 6px,
+    #1e1e1e 12px,
+    #b45309 12px,
+    #b45309 18px
+  );
+
+  opacity: 0.85;
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 }

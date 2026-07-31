@@ -9,6 +9,7 @@
 .user {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   gap: 12px;
 }
 
@@ -26,12 +27,24 @@
 .tagline {
   font-size: 12px;
   color: var(--color-text-secondary);
+=======
+  gap: 10px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 500;
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 }
 
 .actions {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   gap: 4px;
+=======
+  gap: 8px;
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 }
 
 .iconButton {
@@ -61,8 +74,13 @@
 
 .badge {
   position: absolute;
+<<<<<<< HEAD
   top: 4px;
   right: 4px;
+=======
+  top: 2px;
+  right: 2px;
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 
   min-width: 16px;
   height: 16px;

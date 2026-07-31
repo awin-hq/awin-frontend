@@ -3,8 +3,11 @@ import localFont from "next/font/local";
 
 import "@/styles/index.css";
 
+<<<<<<< HEAD
 import { AuthProvider } from "@/features/auth/context";
 
+=======
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 const sfPro = localFont({
   src: [
     {
@@ -40,7 +43,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sfPro.variable}>
+<<<<<<< HEAD
         <AuthProvider>{children}</AuthProvider>
+=======
+        {children}
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
       </body>
     </html>
   );

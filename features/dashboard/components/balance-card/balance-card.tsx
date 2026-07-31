@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 "use client";
 
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 
+=======
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 import { formatNaira } from "@/lib/format";
 
 import styles from "./balance-card.module.css";
@@ -13,6 +16,7 @@ type BalanceCardProps = {
 };
 
 export function BalanceCard({ balance, debtorCount }: BalanceCardProps) {
+<<<<<<< HEAD
   const [revealed, setRevealed] = useState(false);
 
   return (
@@ -44,6 +48,15 @@ export function BalanceCard({ balance, debtorCount }: BalanceCardProps) {
       <p className={styles.debtors}>
         {revealed ? `${debtorCount} Debtors` : "••••••••••"}
       </p>
+=======
+  return (
+    <section className={styles.card}>
+      <p className={styles.label}>Total Outstanding Balance:</p>
+      <p className={styles.value}>{formatNaira(balance)}</p>
+      <p className={styles.debtors}>{debtorCount} Debtors</p>
+
+      <span className={styles.pattern} aria-hidden="true" />
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
     </section>
   );
 }

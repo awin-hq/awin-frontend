@@ -67,16 +67,27 @@
   align-items: center;
   gap: 6px;
 
+<<<<<<< HEAD
   padding: 22px 24px;
   margin-bottom: 12px;
 
   background: linear-gradient(135deg, #fbdd8f 0%, #f7c65a 100%);
+=======
+  padding: 24px;
+  margin-bottom: 16px;
+
+  background: #eef0f6;
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
   border-radius: var(--radius-lg);
 }
 
 .balanceLabel {
   font-size: 14px;
+<<<<<<< HEAD
   color: #7a5a12;
+=======
+  color: var(--color-text-secondary);
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 }
 
 .balanceValue {
@@ -85,18 +96,25 @@
   color: var(--color-primary);
 }
 
+<<<<<<< HEAD
 .loading {
   padding: 64px 16px;
   text-align: center;
   color: var(--color-text-secondary);
 }
 
+=======
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 .stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 
+<<<<<<< HEAD
   margin-bottom: 20px;
+=======
+  margin-bottom: 28px;
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 }
 
 .statCard {
@@ -106,8 +124,12 @@
 
   padding: 16px;
 
+<<<<<<< HEAD
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+=======
+  background: #eef0f6;
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
   border-radius: var(--radius-lg);
 }
 
@@ -126,6 +148,7 @@
   color: var(--color-primary);
 }
 
+<<<<<<< HEAD
 .statusRow {
   display: flex;
   align-items: center;
@@ -169,6 +192,8 @@
   opacity: 0.8;
 }
 
+=======
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 .transactions {
   display: flex;
   flex-direction: column;
