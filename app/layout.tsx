@@ -41,6 +41,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={sfPro.variable}>
         <AuthProvider>{children}</AuthProvider>
+        {children}
       </body>
     </html>
   );
