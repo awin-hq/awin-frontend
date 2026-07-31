@@ -1,39 +1,70 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 
 import styles from "./login-form.module.css";
 
-import { TextInput } from "@/components/forms/text-input";
+import { PhoneInput } from "@/components/forms/phone-input";
 import { PasswordInput } from "@/components/forms/password-input";
 import { PrimaryButton } from "@/components/buttons/primary-button";
+import { ApiError } from "@/services/http";
+import { authService } from "@/services";
 
 type LoginFormData = {
-  email: string;
+  phone: string;
   password: string;
 };
 
+function normalizePhone(value: string): string {
+  return value.replace(/\D/g, "");
+}
+
 export function LoginForm() {
   const router = useRouter();
+  const [error, setError] = useState<string | null>(null);
 
   const {
+    control,
     register,
     handleSubmit,
     formState: { isSubmitting },
   } = useForm<LoginFormData>({
     defaultValues: {
-      email: "",
+      phone: "",
       password: "",
     },
   });
 
   const onSubmit = async (data: LoginFormData) => {
-    console.log(data);
+    setError(null);
 
-    // TODO: Replace with login API call
-    router.push("/dashboard");
+    try {
+      const result = await authService.login({
+        phoneNumber: normalizePhone(data.phone),
+        password: data.password,
+      });
+
+      if (!result.token) {
+        setError(
+          result.message || "Couldn't sign you in. Please try again."
+        );
+        return;
+      }
+
+      const next =
+        new URLSearchParams(window.location.search).get("next") ||
+        "/dashboard";
+      router.push(next);
+    } catch (err) {
+      setError(
+        err instanceof ApiError
+          ? err.message
+          : "Something went wrong. Please try again."
+      );
+    }
   };
 
   return (
@@ -42,12 +73,16 @@ export function LoginForm() {
       className={styles.form}
     >
       <div className={styles.field}>
-        <TextInput
-          label="Email Address"
-          placeholder="Enter your email"
-          type="email"
-          autoComplete="email"
-          {...register("email")}
+        <Controller
+          name="phone"
+          control={control}
+          render={({ field }) => (
+            <PhoneInput
+              label="Phone Number"
+              value={field.value}
+              onChange={field.onChange}
+            />
+          )}
         />
       </div>
 
@@ -72,6 +107,8 @@ export function LoginForm() {
           {...register("password")}
         />
       </div>
+
+      {error ? <p className={styles.error}>{error}</p> : null}
 
       <div className={styles.button}>
         <PrimaryButton

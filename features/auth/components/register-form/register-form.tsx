@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
@@ -18,8 +19,11 @@ type RegisterFormData = {
   confirmPassword: string;
 };
 
+const DRAFT_KEY = "awin-register-draft";
+
 export function RegisterForm() {
   const router = useRouter();
+  const [formError, setFormError] = useState<string | null>(null);
 
   const {
     register,
@@ -38,7 +42,17 @@ export function RegisterForm() {
   const password = watch("password");
 
   function onSubmit(data: RegisterFormData) {
-    console.log(data);
+    setFormError(null);
+
+    if (data.password !== data.confirmPassword) {
+      setFormError("Passwords do not match.");
+      return;
+    }
+
+    // The register endpoint also requires a phoneNumber, collected on the
+    // next screen — stash this step's data and submit everything together
+    // once we have the phone number.
+    sessionStorage.setItem(DRAFT_KEY, JSON.stringify(data));
 
     router.push("/phone");
   }
@@ -89,6 +103,7 @@ export function RegisterForm() {
         <PasswordInput
           label="Confirm Password"
           placeholder="Re-enter your password"
+          error={formError ?? undefined}
           {...register("confirmPassword")}
         />
       </div>

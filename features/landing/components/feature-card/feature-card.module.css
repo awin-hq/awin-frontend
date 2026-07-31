@@ -1,0 +1,46 @@
+.card {
+  background: #ffffff;
+  border: 1px solid #f5b000;
+  border-radius: 20px;
+
+  padding: 16px;
+
+  min-height: 240px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: all 0.3s ease;
+
+  cursor: pointer;
+}
+
+.card:hover {
+  background: #ffe38a;
+
+  transform: translateY(-6px);
+
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+  margin-bottom: 20px;
+}
+
+.title {
+  margin: 0 0 18px;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.description {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 16px;
+}

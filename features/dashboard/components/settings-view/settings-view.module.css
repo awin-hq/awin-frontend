@@ -1,0 +1,72 @@
+.view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding: 24px 16px 16px;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 16px;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  min-width: 0;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  height: 48px;
+
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+
+  background: transparent;
+  color: var(--color-error);
+
+  font-size: 15px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.logout:hover {
+  background: rgba(220, 38, 38, 0.06);
+}

@@ -1,0 +1,40 @@
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 1;
+
+  user-select: none;
+}
+
+.sm {
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
+}
+
+.md {
+  width: 40px;
+  height: 40px;
+  font-size: 15px;
+}
+
+.lg {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+}
+
+.xl {
+  width: 88px;
+  height: 88px;
+  font-size: 34px;
+  font-weight: 500;
+}
