@@ -1,0 +1,65 @@
+.banner {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+
+  padding: 20px;
+
+  background: linear-gradient(135deg, #f7c855 0%, #f2b23d 100%);
+  border-radius: var(--radius-lg);
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  max-width: 66%;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e1e1e;
+}
+
+.text {
+  font-size: 13px;
+  line-height: 18px;
+  color: #4a3c14;
+}
+
+.button {
+  align-self: flex-start;
+  margin-top: 10px;
+
+  padding: 8px 18px;
+
+  border: 1px solid rgba(30, 30, 30, 0.25);
+  border-radius: 999px;
+
+  background: #ffffff;
+  color: var(--color-primary);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.button:hover {
+  background: #fff7ec;
+}
+
+.art {
+  display: inline-flex;
+  align-items: flex-end;
+
+  flex-shrink: 0;
+}

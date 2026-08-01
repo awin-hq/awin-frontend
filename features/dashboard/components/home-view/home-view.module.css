@@ -1,0 +1,12 @@
+.view {
+  display: flex;
+  flex-direction: column;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding: 0 16px 16px;
+}

@@ -1,0 +1,91 @@
+.card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 20px;
+
+  background: linear-gradient(135deg, #ff7a1a 0%, #f0600d 100%);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 24px rgba(240, 96, 13, 0.28);
+
+  color: #ffffff;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.label {
+  font-size: 14px;
+  opacity: 0.92;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.toggle:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.value {
+  margin-top: 10px;
+
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.debtors {
+  margin-top: 8px;
+
+  font-size: 13px;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+/* Decorative Adire-inspired motif in the top-right corner. */
+.pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 72px;
+
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(0, 0, 0, 0.28) 0,
+    rgba(0, 0, 0, 0.28) 4px,
+    transparent 4px,
+    transparent 9px
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to left,
+    #000 0%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(to left, #000 0%, transparent 100%);
+
+  pointer-events: none;
+}
