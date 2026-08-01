@@ -14,6 +14,7 @@ export function SettingsView() {
     [merchant?.firstName, merchant?.lastName].filter(Boolean).join(" ") ||
     "Your account";
 
+    
   return (
     <div className={styles.view}>
       <h1 className={styles.title}>Settings</h1>
