@@ -1,9 +1,57 @@
 .view {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+
+  padding: 16px;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.iconButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--color-text);
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.iconButton:hover {
+  background: var(--color-border);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 0 16px 16px;
+=======
   gap: 16px;
 
   padding: 16px;
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 }
 
 .searchBar {
@@ -51,6 +99,15 @@
 .list {
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
+}
+
+.loading {
+  padding: 48px 0;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+=======
 
   min-height: 200px;
 }
@@ -70,3 +127,4 @@
   height: 52px;
   border-radius: var(--radius-md);
 }
+>>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
