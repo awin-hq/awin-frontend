@@ -14,13 +14,12 @@ export function SettingsView() {
     [merchant?.firstName, merchant?.lastName].filter(Boolean).join(" ") ||
     "Your account";
 
-    
   return (
     <div className={styles.view}>
       <h1 className={styles.title}>Settings</h1>
 
       <section className={styles.profile}>
-        <Avatar name={name} size="lg" />
+        <Avatar name={name} size="lg" color="var(--color-primary)" />
 
         <div className={styles.info}>
           <span className={styles.name}>{name}</span>
