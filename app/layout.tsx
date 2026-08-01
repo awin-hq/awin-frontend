@@ -40,8 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sfPro.variable}>
-        <AuthProvider>{children}</AuthProvider>
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
