@@ -4,3 +4,8 @@
 
   gap: 32px;
 }
+
+.error {
+  color: #dc2626;
+  font-size: 14px;
+}

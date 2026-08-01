@@ -8,8 +8,8 @@ export default function OtpPage() {
       <OtpBackButton />
 
       <AuthHeader
-        title="Verify your phone number"
-        description="Enter the 6-digit verification code we sent to your phone."
+        title="Check your email"
+        description="Enter the 6-digit verification code we sent to your Email."
       />
 
       <OtpForm />
