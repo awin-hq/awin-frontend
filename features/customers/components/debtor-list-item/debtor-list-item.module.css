@@ -37,7 +37,6 @@
   color: var(--color-text-secondary);
 }
 
-<<<<<<< HEAD
 .right {
   display: flex;
   flex-direction: column;
@@ -54,11 +53,6 @@
 }
 
 .badge {
-=======
-.badge {
-  flex-shrink: 0;
-
->>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
   padding: 6px 16px;
 
   border-radius: 999px;
@@ -79,10 +73,7 @@
 .paid {
   background: var(--color-success);
 }
-<<<<<<< HEAD
 
 .nil {
   background: var(--color-text-secondary);
 }
-=======
->>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf

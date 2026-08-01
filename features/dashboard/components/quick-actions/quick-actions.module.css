@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .section {
   display: flex;
   flex-direction: column;
@@ -11,8 +10,6 @@
   color: var(--color-text);
 }
 
-=======
->>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 .actions {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -34,7 +31,6 @@
   align-items: center;
   justify-content: center;
 
-<<<<<<< HEAD
   width: 48px;
   height: 48px;
 
@@ -45,13 +41,6 @@
 
   box-shadow: 0 6px 14px rgba(240, 96, 13, 0.24);
 
-=======
-  width: 56px;
-  height: 56px;
-
-  border-radius: 50%;
-
->>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
   transition: transform 0.2s ease;
 }
 
@@ -59,24 +48,6 @@
   transform: translateY(-2px);
 }
 
-<<<<<<< HEAD
-=======
-.violet {
-  background: #ede9fe;
-  color: #6d28d9;
-}
-
-.green {
-  background: #dcfce7;
-  color: #15803d;
-}
-
-.peach {
-  background: #ffe4d6;
-  color: var(--color-primary);
-}
-
->>>>>>> 954f21ef9b50623d835362d96b782ab17b8150bf
 .label {
   font-size: 13px;
   font-weight: 500;
