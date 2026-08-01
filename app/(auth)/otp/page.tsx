@@ -9,8 +9,8 @@ export default function OtpPage() {
       <OtpBackButton />
 
       <AuthHeader
-        title="Check your Email"
-        description="Enter the 6-digit code sent to your email to complete your account setup."
+        title="Check your email"
+        description="Enter the 6-digit verification code we sent to your Email."
       />
 
       <OtpForm />

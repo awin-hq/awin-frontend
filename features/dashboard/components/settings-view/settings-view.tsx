@@ -19,7 +19,7 @@ export function SettingsView() {
       <h1 className={styles.title}>Settings</h1>
 
       <section className={styles.profile}>
-        <Avatar name={name} size="lg" color="var(--color-primary)" />
+        <Avatar name={name} size="lg" />
 
         <div className={styles.info}>
           <span className={styles.name}>{name}</span>

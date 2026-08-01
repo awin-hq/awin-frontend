@@ -29,6 +29,7 @@ export function RegisterForm() {
     register,
     watch,
     handleSubmit,
+    formState: { errors },
   } = useForm<RegisterFormData>({
     defaultValues: {
       firstName: "",
@@ -52,7 +53,15 @@ export function RegisterForm() {
     // The register endpoint also requires a phoneNumber, collected on the
     // next screen — stash this step's data and submit everything together
     // once we have the phone number.
-    sessionStorage.setItem(DRAFT_KEY, JSON.stringify(data));
+    sessionStorage.setItem(
+      DRAFT_KEY,
+      JSON.stringify({
+        ...data,
+        firstName: data.firstName.trim(),
+        lastName: data.lastName.trim(),
+        email: data.email.trim(),
+      })
+    );
 
     router.push("/phone");
   }
@@ -67,7 +76,10 @@ export function RegisterForm() {
           <TextInput
             label="First Name"
             placeholder="John"
-            {...register("firstName")}
+            error={errors.firstName?.message}
+            {...register("firstName", {
+              required: "First name is required",
+            })}
           />
         </div>
 
@@ -75,7 +87,10 @@ export function RegisterForm() {
           <TextInput
             label="Last Name"
             placeholder="Doe"
-            {...register("lastName")}
+            error={errors.lastName?.message}
+            {...register("lastName", {
+              required: "Last name is required",
+            })}
           />
         </div>
       </div>
@@ -85,7 +100,14 @@ export function RegisterForm() {
           label="Email Address"
           placeholder="john@example.com"
           type="email"
-          {...register("email")}
+          error={errors.email?.message}
+          {...register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+              message: "Enter a valid email address",
+            },
+          })}
         />
       </div>
 
@@ -93,7 +115,14 @@ export function RegisterForm() {
         <PasswordInput
           label="Create Password"
           placeholder="Create a password"
-          {...register("password")}
+          error={errors.password?.message}
+          {...register("password", {
+            required: "Password is required",
+            minLength: {
+              value: 8,
+              message: "Password must be at least 8 characters",
+            },
+          })}
         />
 
         <PasswordStrength password={password} />
@@ -103,8 +132,14 @@ export function RegisterForm() {
         <PasswordInput
           label="Confirm Password"
           placeholder="Re-enter your password"
-          error={formError ?? undefined}
-          {...register("confirmPassword")}
+          error={
+            errors.confirmPassword?.message ??
+            formError ??
+            undefined
+          }
+          {...register("confirmPassword", {
+            required: "Please confirm your password",
+          })}
         />
       </div>
 
