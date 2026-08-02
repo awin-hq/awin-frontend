@@ -1,7 +1,12 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 
 import { BottomNav } from "@/components/dashboard/bottom-nav";
 import { DesktopSidebar } from "@/components/dashboard/desktop-sidebar/desktop-sidebar";
+import { RecentCredits, type RecentCredit } from "@/features/dashboard/components/recent-credits";
 
 import styles from "./app-shell.module.css";
 
@@ -10,6 +15,25 @@ type AppShellProps = {
 };
 
 export function AppShell({ children }: AppShellProps) {
+  const pathname = usePathname();
+  const [recentCredits, setRecentCredits] = useState<RecentCredit[]>([]);
+
+  useEffect(() => {
+    const stored = window.localStorage.getItem("awìn_recent_credits");
+
+    if (!stored) {
+      setRecentCredits([]);
+      return;
+    }
+
+    try {
+      const parsed = JSON.parse(stored);
+      setRecentCredits(Array.isArray(parsed) ? parsed : []);
+    } catch {
+      setRecentCredits([]);
+    }
+  }, [pathname]);
+
   return (
     <div className={styles.shell}>
       <div className={styles.desktopLayout}>
@@ -18,8 +42,7 @@ export function AppShell({ children }: AppShellProps) {
         <main className={styles.main}>{children}</main>
 
         <aside className={styles.recent}>
-          <h2>Recent Credits</h2>
-          <p>No recent credits yet</p>
+          <RecentCredits credits={recentCredits} />
         </aside>
       </div>
 

@@ -8,6 +8,7 @@ import styles from "./debtor-list-item.module.css";
 
 const STATUS_LABEL: Record<Customer["status"], string> = {
   due: "Due",
+  warning: "Due Soon",
   overdue: "Overdue",
   paid: "Paid",
   nil: "Nil",
@@ -33,7 +34,7 @@ export function DebtorListItem({ customer }: DebtorListItemProps) {
             {formatNaira(customer.outstandingBalance)}
           </span>
         ) : null}
-        <span className={`${styles.badge} ${styles[customer.status]}`}>
+        <span className={`${styles.badge} ${styles[customer.status] || styles.nil}`}>
           {STATUS_LABEL[customer.status]}
         </span>
       </div>

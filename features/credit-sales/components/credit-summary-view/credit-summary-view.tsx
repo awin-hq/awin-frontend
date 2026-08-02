@@ -54,32 +54,53 @@ export function CreditSummaryView() {
         {loading ? (
           <p className={styles.loading}>Loading summary…</p>
         ) : data?.hasActivity ? (
-          <div className={styles.stats}>
-            <div className={styles.statCard}>
-              <span className={styles.statLabel}>Credit given</span>
-              <span className={styles.statValue}>
-                {formatNaira(data.totalCredit)}
-              </span>
+          <>
+            <section className={styles.summaryIntro}>
+              <div>
+                <p className={styles.summaryLabel}>This week</p>
+                <h2 className={styles.summaryTitle}>
+                  Your business snapshot
+                </h2>
+              </div>
+              <span className={styles.summaryTag}>Updated in real time</span>
+            </section>
+
+            <div className={styles.stats}>
+              <div className={styles.statCard}>
+                <span className={styles.statLabel}>Credit given</span>
+                <span className={styles.statValue}>
+                  {formatNaira(data.totalCredit)}
+                </span>
+                <p className={styles.statHint}>
+                  Total credit issued in the last 7 days.
+                </p>
+              </div>
+              <div className={styles.statCard}>
+                <span className={styles.statLabel}>Payments received</span>
+                <span className={styles.statValue}>
+                  {formatNaira(data.totalPayments)}
+                </span>
+                <p className={styles.statHint}>
+                  Payments collected from customers this week.
+                </p>
+              </div>
+              <div className={styles.statCard}>
+                <span className={styles.statLabel}>Transactions</span>
+                <span className={styles.statValue}>
+                  {data.transactionCount}
+                </span>
+                <p className={styles.statHint}>
+                  Credit or payment entries recorded.
+                </p>
+              </div>
             </div>
-            <div className={styles.statCard}>
-              <span className={styles.statLabel}>Payments received</span>
-              <span className={styles.statValue}>
-                {formatNaira(data.totalPayments)}
-              </span>
-            </div>
-            <div className={styles.statCard}>
-              <span className={styles.statLabel}>Transactions</span>
-              <span className={styles.statValue}>
-                {data.transactionCount}
-              </span>
-            </div>
-          </div>
+          </>
         ) : (
           <EmptyState
             layout="center"
             illustration={<WeeklySummaryEmptyArt />}
             title="No activity this week"
-            description="Start recording credit sales and payments to see your weekly business summary"
+            description="Record credit sales or payments to populate your weekly summary."
             action={
               <PrimaryButton
                 type="button"

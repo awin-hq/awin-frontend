@@ -26,8 +26,86 @@ export default function RecordCreditForm({
 
 function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    console.log({ itemDescription, amount, date, paymentDueDate, notes });
-    // TODO: send this data to your backend/API later
+
+    const creditAmount = Number(
+      amount.trim().replace(/[^0-9.\-]/g, "")
+    );
+
+    if (!itemDescription || !date || !paymentDueDate || creditAmount <= 0) {
+      return;
+    }
+
+    const creditRecord = {
+      id: crypto.randomUUID(),
+      name: customerName,
+      item: itemDescription,
+      amount: creditAmount,
+      date:
+        date ||
+        new Date().toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        }),
+    };
+
+    const savedCredits = JSON.parse(
+      localStorage.getItem("awìn_recent_credits") || "[]"
+    );
+
+    localStorage.setItem(
+      "awìn_recent_credits",
+      JSON.stringify([creditRecord, ...savedCredits].slice(0, 5))
+    );
+
+    const existingCustomers = JSON.parse(
+      localStorage.getItem("awìn_customers") || "[]"
+    );
+
+    let matchedCustomer = false;
+
+    const updatedCustomers = existingCustomers.map((customer: any) => {
+      const isMatch =
+        customer.phoneNumber === customerPhone ||
+        customer.name === customerName;
+
+      if (!isMatch) {
+        return customer;
+      }
+
+      matchedCustomer = true;
+
+      const previousBalance = Number(customer.outstandingBalance || 0);
+      const previousTotal = Number(customer.totalCreditGiven || 0);
+      const updatedBalance = previousBalance + creditAmount;
+
+      return {
+        ...customer,
+        outstandingBalance: updatedBalance,
+        totalCreditGiven: previousTotal + creditAmount,
+        status: updatedBalance > 0 ? "due" : "paid",
+      };
+    });
+
+    if (!matchedCustomer) {
+      updatedCustomers.push({
+        id: crypto.randomUUID(),
+        name: customerName,
+        phoneNumber: customerPhone,
+        notes: "",
+        status: "due",
+        outstandingBalance: creditAmount,
+        totalCreditGiven: creditAmount,
+        createdAt: new Date().toISOString(),
+      });
+    }
+
+    localStorage.setItem(
+      "awìn_customers",
+      JSON.stringify(updatedCustomers)
+    );
+
+    router.push("/credit-sales/success");
 }
 
 return (

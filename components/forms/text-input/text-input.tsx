@@ -10,16 +10,17 @@ type Props = React.InputHTMLAttributes<HTMLInputElement> & {
 };
 
 export const TextInput = forwardRef<HTMLInputElement, Props>(
-  ({ label, error, helperText, className, ...props }, ref) => {
+  ({ label, error, helperText, className, required, ...props }, ref) => {
     return (
       <div className={styles.wrapper}>
         <label className={styles.label}>
           {label}
-          <span className={styles.required}>*</span>
+          {required ? <span className={styles.required}>*</span> : null}
         </label>
 
         <Input
           ref={ref}
+          required={required}
           className={`${styles.input} ${className ?? ""}`}
           {...props}
         />

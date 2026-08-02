@@ -66,6 +66,10 @@
   background: var(--color-error);
 }
 
+.warning {
+  background: #eab308;
+}
+
 .overdue {
   background: #b91c1c;
 }

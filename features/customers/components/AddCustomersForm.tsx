@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import BottomNav from "@/components/BottomNav";
-import CustomerSuccess from "./CustomerSuccess";
+import CustomerSuccess from "./customer-success/customer-success";
 import { useRouter } from "next/navigation";
 
 export default function AddCustomersForm() {
