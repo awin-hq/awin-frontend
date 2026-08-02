@@ -1,0 +1,116 @@
+.wrapper {
+  width:100%;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:8px;
+}
+
+
+.label {
+  font-size:14px;
+  font-weight:500;
+
+  color:var(--color-text-primary);
+}
+
+
+/*
+ Main phone wrapper
+*/
+.phone {
+  width: 100%;
+  display: flex;
+}
+
+/* Focus the entire control */
+.phone:focus-within .countryButton {
+  border-color: var(--color-primary) !important;
+}
+
+.phone:focus-within .input {
+  border-color: var(--color-primary) !important;
+}
+
+/* Optional: show one focus ring around the whole control */
+.phone:focus-within {
+  border-radius: 16px;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15);
+}
+
+
+/*
+ Country selector button
+*/
+.countryButton {
+  height:48px !important;
+/* 
+  border:1px solid var(--color-border)!important; */
+
+  border-right:none!important;
+
+  border-radius:12px 0 0 12px!important;
+
+  background:var(--color-surface)!important;
+    padding:0 16px!important;
+}
+
+
+
+/*
+ Phone input
+*/
+.input {
+
+  height:48px!important;
+
+  width:100%!important;
+
+
+  border:1px solid var(--color-border)!important;
+
+  border-left:none!important;
+
+  border-radius:0 16px 16px 0!important;
+
+
+  background:var(--color-surface)!important;
+
+
+  font-size:16px!important;
+
+  color:var(--color-text-primary)!important;
+
+/* 
+  outline:none!important; */
+
+
+  padding-left:2px!important;
+
+}
+
+
+/*
+ Country dropdown
+*/
+.dropdown {
+
+  border-radius:16px!important;
+
+  overflow:hidden;
+
+}
+
+
+
+/*
+ Error
+*/
+.error {
+
+  font-size:12px;
+
+  color:#dc2626;
+
+}

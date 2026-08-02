@@ -1,0 +1,122 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 32px 20px;
+
+  background: #ffffff;
+  border-right: 1px solid #e5e7eb;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 4px 12px 40px;
+}
+
+.logo {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #ff6500;
+  color: #ffffff;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brand strong {
+  display: block;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.brand span {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 11px;
+
+  color: #9ca3af;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  min-height: 48px;
+
+  padding: 0 14px;
+
+  border-radius: 10px;
+
+  color: #6b7280;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: 0.2s ease;
+}
+
+.item:hover {
+  background: #fff4ec;
+  color: #ff6500;
+}
+
+.active {
+  background: #fff1e8;
+  color: #ff6500;
+}
+
+.bottom {
+  margin-top: auto;
+
+  padding: 12px;
+}
+
+.help {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  padding: 16px;
+
+  background: #f8f9fc;
+  border-radius: 12px;
+}
+
+.help span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #30323a;
+}
+
+.help small {
+  font-size: 11px;
+  color: #8a8f9d;
+}

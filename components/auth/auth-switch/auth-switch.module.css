@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content:left;
+
+  gap: 6px;
+}
+
+.text {
+  font-size: 14px;
+  color: #8A8A8A;
+}
+
+.link {
+  font-size: 14px;
+  font-weight: 600;
+
+  color: var(--color-primary);
+
+  text-decoration: none;
+
+  transition: opacity .2s ease;
+}
+
+.link:hover {
+  opacity: .7;
+}

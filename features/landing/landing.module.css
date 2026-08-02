@@ -1,0 +1,12 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  /* padding-top: 108px; */
+  width: 100%;
+  min-height: 100vh;
+
+  background: #ffffff;
+
+  overflow-x: hidden;
+}
+

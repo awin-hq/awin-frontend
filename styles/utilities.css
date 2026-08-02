@@ -1,0 +1,29 @@
+.container-mobile {
+  width: 100%;
+  max-width: 430px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-center {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-md);
+}
+
+.rounded-card {
+  border-radius: var(--radius-xl);
+}
+
+.transition-default {
+  transition: all .2s ease;
+}

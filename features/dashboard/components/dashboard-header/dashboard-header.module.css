@@ -1,0 +1,83 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 32px 48px 28px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hello {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: #30323a;
+}
+
+.tagline {
+  font-size: 12px;
+  font-weight: 300;
+  color: #30323a;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconButton {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #15171d;
+
+  cursor: pointer;
+}
+
+.badge {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+
+  min-width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ff6500;
+  color: white;
+
+  font-size: 10px;
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 32px 16px;
+  }
+}

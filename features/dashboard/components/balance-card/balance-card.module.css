@@ -1,0 +1,84 @@
+.card {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 190px;
+  padding: 32px 40px;
+
+  background: #ff6500;
+  border-radius: 14px;
+
+  color: #ffffff;
+}
+
+.top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
+}
+
+.value {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 18px;
+
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.debtors {
+  position: relative;
+  z-index: 2;
+
+  margin-top: 42px;
+
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 78px;
+
+  background: repeating-linear-gradient(
+    45deg,
+    #111 0,
+    #111 5px,
+    #fff 5px,
+    #fff 9px,
+    #111 9px,
+    #111 14px
+  );
+
+  opacity: 0.95;
+  pointer-events: none;
+}
