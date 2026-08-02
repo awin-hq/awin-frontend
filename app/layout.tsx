@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 
 import "@/styles/index.css";
 
+import { AuthProvider } from "@/features/auth/context";
+
 const sfPro = localFont({
   src: [
     {
@@ -38,7 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sfPro.variable}>
-        {children}
+        <AuthProvider>
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

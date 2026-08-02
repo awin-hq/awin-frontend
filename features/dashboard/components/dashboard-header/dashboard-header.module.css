@@ -3,24 +3,38 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 16px;
+  padding: 32px 48px 28px;
 }
 
 .user {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
 }
 
-.name {
+.greeting {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hello {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
+  line-height: 1.15;
+  color: #30323a;
+}
+
+.tagline {
+  font-size: 12px;
+  font-weight: 300;
+  color: #30323a;
 }
 
 .actions {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .iconButton {
@@ -33,40 +47,37 @@
   width: 40px;
   height: 40px;
 
-  border: none;
+  border: 0;
   border-radius: 50%;
 
   background: transparent;
-  color: var(--color-text);
+  color: #15171d;
 
   cursor: pointer;
-
-  transition: background 0.2s ease;
-}
-
-.iconButton:hover {
-  background: var(--color-border);
 }
 
 .badge {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 3px;
+  right: 3px;
 
   min-width: 16px;
   height: 16px;
-  padding: 0 4px;
 
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 999px;
+  border-radius: 50%;
 
-  background: var(--color-primary);
-  color: #ffffff;
+  background: #ff6500;
+  color: white;
 
   font-size: 10px;
-  font-weight: 500;
-  line-height: 1;
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 32px 16px;
+  }
 }

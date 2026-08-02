@@ -1,78 +1,89 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
 }
 
 .title {
-  font-size: 16px;
-  font-weight: 500;
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  color: #30323a;
 }
 
 .list {
+  min-height: 166px;
+
   display: flex;
-  flex-direction: column;
+  align-items: center;
 
   list-style: none;
 
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  background: transparent;
+  border: 2px solid #c8cfdf;
+  border-radius: 28px;
 
-  padding: 4px 12px;
+  padding: 24px 34px;
 }
 
 .item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 
-  padding: 12px 0;
-
-  border-bottom: 1px solid var(--color-border);
-}
-
-.item:last-child {
-  border-bottom: none;
+  width: 100%;
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 8px;
 
   flex: 1;
-  min-width: 0;
 }
 
 .name {
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 400;
+  color: #29385d;
 }
 
 .meta {
-  font-size: 13px;
-  color: var(--color-text-secondary);
+  font-size: 18px;
+  color: #29385d;
 }
 
 .right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 2px;
-
-  text-align: right;
 }
 
 .amount {
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-text);
-
-  white-space: nowrap;
 }
 
 .date {
   font-size: 12px;
-  color: var(--color-text-secondary);
+  color: #6b7280;
+}
+
+@media (max-width: 767px) {
+  .section {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .list {
+    min-height: 166px;
+    padding: 24px 16px;
+    border-radius: 28px;
+  }
 }

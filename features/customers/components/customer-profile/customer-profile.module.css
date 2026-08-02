@@ -67,16 +67,16 @@
   align-items: center;
   gap: 6px;
 
-  padding: 24px;
-  margin-bottom: 16px;
+  padding: 22px 24px;
+  margin-bottom: 12px;
 
-  background: #eef0f6;
+  background: linear-gradient(135deg, #fbdd8f 0%, #f7c65a 100%);
   border-radius: var(--radius-lg);
 }
 
 .balanceLabel {
   font-size: 14px;
-  color: var(--color-text-secondary);
+  color: #7a5a12;
 }
 
 .balanceValue {
@@ -85,12 +85,18 @@
   color: var(--color-primary);
 }
 
+.loading {
+  padding: 64px 16px;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
 .stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .statCard {
@@ -100,7 +106,8 @@
 
   padding: 16px;
 
-  background: #eef0f6;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 }
 
@@ -117,6 +124,49 @@
 
 .statAmount {
   color: var(--color-primary);
+}
+
+.statusRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 4px 4px 20px;
+  margin-bottom: 8px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.statusInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statusLabel {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+}
+
+.statusValue {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.changeStatus {
+  border: none;
+  background: transparent;
+
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+}
+
+.changeStatus:hover {
+  opacity: 0.8;
 }
 
 .transactions {

@@ -4,14 +4,20 @@
 }
 
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
   align-items: center;
-  justify-content: space-between;
 
   padding: 16px;
 }
 
-.menuButton {
+.title {
+  font-size: 17px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.iconButton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -30,49 +36,45 @@
   transition: background 0.2s ease;
 }
 
-.menuButton:hover {
+.iconButton:hover {
   background: var(--color-border);
 }
 
-.user {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.name {
-  font-size: 16px;
-  font-weight: 500;
-}
-
 .body {
+  padding: 24px 16px 16px;
+}
+
+.loading {
+  padding: 64px 0;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.stats {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-
-  padding: 8px 16px 16px;
+  gap: 12px;
 }
 
-.placeholder {
+.statCard {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  min-height: 320px;
+  padding: 18px;
 
-  background: #eef0f6;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
 }
 
-.placeholderText {
-  padding: 0 24px;
-
+.statLabel {
   font-size: 14px;
   color: var(--color-text-secondary);
-  text-align: center;
 }
 
-.action button {
-  height: 52px;
-  border-radius: var(--radius-md);
+.statValue {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
 }

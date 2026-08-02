@@ -1,25 +1,50 @@
 import Link from "next/link";
-import { ArrowUpRight, UserPlus, Tags } from "lucide-react";
+import { CreditCard, UserPlus, Users } from "lucide-react";
 
 import styles from "./quick-actions.module.css";
 
 const ACTIONS = [
-  { href: "/customers/add", label: "Add Customer", icon: UserPlus, variant: "green" },
-  { href: "/customers", label: "Record Credit", icon: ArrowUpRight, variant: "violet" },
-  { href: "/customers", label: "View Customers", icon: Tags, variant: "peach" },
+
+  {
+    href: "/credit-sales/add",
+    label: "Record Credit",
+    icon: CreditCard,
+  },
+  {
+    href: "/customers/add",
+    label: "Add Debtor",
+    icon: UserPlus,
+  },
+  {
+    href: "/customers",
+    label: "View Creditors",
+    icon: Users,
+  },
+
 ] as const;
 
 export function QuickActions() {
   return (
-    <div className={styles.actions}>
-      {ACTIONS.map(({ href, label, icon: Icon, variant }) => (
-        <Link key={label} href={href} className={styles.action}>
-          <span className={`${styles.circle} ${styles[variant]}`}>
-            <Icon size={22} aria-hidden="true" />
-          </span>
-          <span className={styles.label}>{label}</span>
-        </Link>
-      ))}
-    </div>
+    <section className={styles.section}>
+      <h3 className={styles.heading}>Quick Actions</h3>
+
+      <div className={styles.actions}>
+        {ACTIONS.map(({ href, label, icon: Icon }) => (
+          <Link
+            key={label}
+            href={href}
+            className={styles.action}
+          >
+            <span className={styles.circle}>
+              <Icon size={20} aria-hidden="true" />
+            </span>
+
+            <span className={styles.label}>
+              {label}
+            </span>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 }

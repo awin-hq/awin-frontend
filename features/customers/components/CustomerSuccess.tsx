@@ -2,7 +2,6 @@
 
 import { CheckCircle2, ChevronLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import BottomNav from "@/components/BottomNav";
 
 export default function CustomerSuccess({
     customerName,
@@ -42,7 +41,6 @@ export default function CustomerSuccess({
         </Button>
     </div>
 
-    <BottomNav />
     </div>
     );
 }

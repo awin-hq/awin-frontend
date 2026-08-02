@@ -15,7 +15,7 @@ export default function BottomNav() {
     const pathname = usePathname();
 
 return (
-    <div className="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto bg-white border-t flex justify-around items-center h-16">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 grid grid-cols-4 border-t bg-white px-2 pb-[env(safe-area-inset-bottom)] pt-2 md:hidden">
         {navItems.map((item) => {
             const isActive =
                 item.href === "/dashboard"
@@ -39,6 +39,6 @@ return (
             </Link>
             );
         })}
-        </div>
+        </nav>
     );
 }

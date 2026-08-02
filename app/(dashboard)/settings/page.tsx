@@ -1,5 +1,5 @@
-import { PlaceholderView } from "@/features/dashboard/components/placeholder-view";
+import { SettingsView } from "@/features/dashboard/components/settings-view";
 
 export default function SettingsPage() {
-  return <PlaceholderView title="Settings" />;
+  return <SettingsView />;
 }

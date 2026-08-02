@@ -1,6 +1,5 @@
-import { DebtorsView } from "@/features/customers/components/debtors-view";
-import { CUSTOMERS } from "@/features/customers/data";
+import { PaymentsView } from "@/features/customers/components/debtors-view";
 
-export default function CustomersPage() {
-  return <DebtorsView customers={CUSTOMERS} />;
+export default function PaymentsPage() {
+  return <PaymentsView />;
 }

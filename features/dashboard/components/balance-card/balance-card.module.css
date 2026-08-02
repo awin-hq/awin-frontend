@@ -2,51 +2,83 @@
   position: relative;
   overflow: hidden;
 
-  padding: 24px 20px 28px;
+  min-height: 190px;
+  padding: 32px 40px;
 
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
+  background: #ff6500;
+  border-radius: 14px;
+
+  color: #ffffff;
+}
+
+.top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .label {
-  font-size: 14px;
-  color: var(--color-text-secondary);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
 }
 
 .value {
-  margin: 4px 0 2px;
+  position: relative;
+  z-index: 2;
 
-  font-size: 34px;
+  margin-top: 18px;
+
+  font-size: 30px;
   font-weight: 700;
-  line-height: 1.1;
-  color: var(--color-text);
+  letter-spacing: 3px;
 }
 
 .debtors {
-  font-size: 13px;
-  color: var(--color-text-secondary);
+  position: relative;
+  z-index: 2;
+
+  margin-top: 42px;
+
+  font-size: 12px;
+  letter-spacing: 3px;
 }
 
-/* Decorative Adire-inspired strip along the bottom of the card. */
 .pattern {
   position: absolute;
-  left: 0;
+  top: 0;
   right: 0;
   bottom: 0;
 
-  height: 14px;
+  width: 78px;
 
-  background-image: repeating-linear-gradient(
-    -45deg,
-    var(--color-primary) 0,
-    var(--color-primary) 6px,
-    #1e1e1e 6px,
-    #1e1e1e 12px,
-    #b45309 12px,
-    #b45309 18px
+  background: repeating-linear-gradient(
+    45deg,
+    #111 0,
+    #111 5px,
+    #fff 5px,
+    #fff 9px,
+    #111 9px,
+    #111 14px
   );
 
-  opacity: 0.85;
+  opacity: 0.95;
+  pointer-events: none;
 }

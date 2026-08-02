@@ -1,0 +1,226 @@
+.page {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--color-background);
+}
+
+.content {
+  width: 100%;
+  max-width: 430px;
+
+  flex: 1;
+
+  margin: 0 auto;
+
+  padding: 24px 24px 120px;
+}
+
+
+/* HEADER */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  margin-bottom: 24px;
+}
+
+.backButton {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: -6px;
+
+  border: none;
+  background: transparent;
+
+  color: var(--color-text);
+
+  cursor: pointer;
+}
+
+.title {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.3;
+
+  color: var(--color-text);
+}
+
+
+/* CUSTOMER CARD */
+
+.customerCard {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding: 16px;
+
+  margin-bottom: 22px;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface);
+}
+
+.customerInfo {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--color-primary);
+
+  color: white;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.customerDetails {
+  min-width: 0;
+}
+
+.customerName {
+  margin: 0;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  color: var(--color-text);
+}
+
+.customerPhone {
+  margin: 3px 0 0;
+
+  font-size: 13px;
+
+  color: #9CA3AF;
+}
+
+.balance {
+  flex-shrink: 0;
+
+  text-align: right;
+}
+
+.balance p {
+  margin: 0 0 4px;
+
+  font-size: 13px;
+
+  color: var(--color-primary);
+}
+
+.balance strong {
+  font-size: 15px;
+  font-weight: 500;
+
+  color: var(--color-text-secondary);
+}
+
+
+/* FORM */
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.submitButton {
+  width: 100%;
+  height: 56px;
+
+  margin-top: 6px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: var(--color-primary);
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.submitButton:hover {
+  background: var(--color-primary-hover);
+}
+
+.submitButton:active {
+  transform: scale(0.99);
+}
+
+
+/* DESKTOP */
+
+@media (min-width: 768px) {
+  .page {
+    min-height: 100vh;
+
+    background: var(--color-background);
+  }
+
+  .content {
+    max-width: 620px;
+
+    padding: 48px 40px 80px;
+  }
+
+  .header {
+    margin-bottom: 28px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .customerCard {
+    padding: 18px;
+  }
+
+  .form {
+    gap: 22px;
+  }
+}
