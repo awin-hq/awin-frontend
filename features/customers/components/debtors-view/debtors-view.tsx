@@ -140,7 +140,7 @@ export function PaymentsView() {
         <button
           type="button"
           onClick={() =>
-            router.push("/dashboard/customers/add")
+            router.push("/customers/add")
           }
           className="fixed bottom-24 left-1/2 z-30 flex h-14 w-[calc(100%-32px)] max-w-[398px] -translate-x-1/2 items-center justify-center gap-2 rounded-full bg-orange-500 px-6 text-base font-medium text-white shadow-lg hover:bg-orange-600"
         >
