@@ -8,6 +8,8 @@ import { SegmentedTabs } from "@/components/dashboard/segmented-tabs";
 import { EmptyState } from "@/components/dashboard/empty-state";
 import { DuePaymentsEmptyArt } from "@/components/dashboard/illustrations";
 import { DebtorListItem } from "@/features/customers/components/debtor-list-item";
+import { useAsync } from "@/hooks/use-async";
+import { customersService } from "@/services";
 
 import type { Customer } from "@/services/types";
 
@@ -21,19 +23,22 @@ export function PaymentsView() {
   const [query, setQuery] = useState("");
   const [tab, setTab] = useState<string>("All");
 
-  const [customers] = useState<Customer[]>(() => {
-    if (typeof window === "undefined") return [];
+  const { data } = useAsync<Customer[]>(
+    async (signal) => {
+      const localCustomers = typeof window === "undefined"
+        ? []
+        : JSON.parse(localStorage.getItem("awìn_customers") || "[]");
 
-    const saved = localStorage.getItem("awìn_customers");
+      try {
+        return await customersService.getCustomers(signal);
+      } catch {
+        return Array.isArray(localCustomers) ? localCustomers : [];
+      }
+    },
+    []
+  );
 
-    if (!saved) return [];
-
-    try {
-      return JSON.parse(saved);
-    } catch {
-      return [];
-    }
-  });
+  const customers = Array.isArray(data) ? data : [];
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -53,7 +58,7 @@ export function PaymentsView() {
       }
 
       if (tab === "Due Today") {
-        return customer.status === "due";
+        return customer.status === "due" || customer.status === "warning";
       }
 
       if (tab === "Paid") {

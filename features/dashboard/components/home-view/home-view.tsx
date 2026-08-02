@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 
 import { useAsync } from "@/hooks/use-async";
+import { toNumber } from "@/lib/format";
 import { getStoredMerchant } from "@/lib/session";
 import { customersService, notificationsService } from "@/services";
 import type { Customer } from "@/services/types";
@@ -34,12 +35,45 @@ async function loadDashboard(signal: AbortSignal): Promise<DashboardData> {
 }
 
 export function HomeView() {
-  const { data } = useAsync(loadDashboard, []);
+  const { data, reload } = useAsync(loadDashboard, []);
+
+  useEffect(() => {
+    function handleVisibilityChange() {
+      if (document.visibilityState === "visible") {
+        reload();
+      }
+    }
+
+    function handleStorageUpdate(event: StorageEvent) {
+      if (
+        event.key === "awìn_customers" ||
+        event.key === "awìn_transactions"
+      ) {
+        reload();
+      }
+    }
+
+    function handleDataRefresh() {
+      reload();
+    }
+
+    window.addEventListener("focus", reload);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("storage", handleStorageUpdate);
+    window.addEventListener("awìn:data-updated", handleDataRefresh);
+
+    return () => {
+      window.removeEventListener("focus", reload);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("storage", handleStorageUpdate);
+      window.removeEventListener("awìn:data-updated", handleDataRefresh);
+    };
+  }, [reload]);
 
   const outstandingBalance = useMemo(
     () =>
       (data?.customers ?? []).reduce(
-        (sum, c) => sum + c.outstandingBalance,
+        (sum, customer) => sum + toNumber(customer.outstandingBalance),
         0
       ),
     [data]
@@ -47,7 +81,9 @@ export function HomeView() {
 
   const debtorCount = useMemo(
     () =>
-      (data?.customers ?? []).filter((c) => c.outstandingBalance > 0).length,
+      (data?.customers ?? []).filter(
+        (customer) => toNumber(customer.outstandingBalance) > 0
+      ).length,
     [data]
   );
 

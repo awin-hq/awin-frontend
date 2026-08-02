@@ -30,7 +30,7 @@ export type Transaction = {
   createdAt?: string;
 };
 
-export type CustomerStatus = "due" | "overdue" | "paid" | "nil";
+export type CustomerStatus = "due" | "warning" | "overdue" | "paid" | "nil";
 
 export type Customer = {
   id: string;

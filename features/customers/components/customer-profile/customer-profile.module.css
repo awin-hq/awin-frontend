@@ -154,19 +154,96 @@
   color: var(--color-text);
 }
 
-.changeStatus {
+.statusActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.repayButton {
   border: none;
-  background: transparent;
-
-  color: var(--color-primary);
-  font-size: 14px;
-  font-weight: 500;
-
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: var(--color-primary);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
   cursor: pointer;
 }
 
-.changeStatus:hover {
-  opacity: 0.8;
+.paymentForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 16px;
+  margin-bottom: 20px;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.fieldLabel {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: white;
+}
+
+.checkboxRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 13px;
+  color: var(--color-text);
+}
+
+.submitButton {
+  padding: 10px 14px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.feedback {
+  font-size: 13px;
+  color: var(--color-success);
+}
+
+.due {
+  color: var(--color-error);
+}
+
+.warning {
+  color: #eab308;
+}
+
+.overdue {
+  color: #b91c1c;
+}
+
+.paid {
+  color: var(--color-success);
+}
+
+.nil {
+  color: var(--color-text-secondary);
 }
 
 .transactions {

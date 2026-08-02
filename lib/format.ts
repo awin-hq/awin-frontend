@@ -1,17 +1,35 @@
 /**
+ * Convert a value into a finite number, even when it comes from strings
+ * such as currency-formatted values or empty input.
+ */
+export function toNumber(value: unknown): number {
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return value;
+  }
+
+  if (typeof value === "string") {
+    const parsed = Number(value.replace(/[^0-9.-]/g, ""));
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
+
+  return 0;
+}
+
+/**
  * Format a number as Nigerian Naira, e.g. 80000 -> "₦80,000".
  * Pass `decimals` to control the fraction digits (defaults to none).
  */
 export function formatNaira(
-  amount: number,
+  amount: number | string | null | undefined,
   decimals = 0
 ): string {
-  const value = new Intl.NumberFormat("en-NG", {
+  const value = toNumber(amount);
+  const formatted = new Intl.NumberFormat("en-NG", {
     minimumFractionDigits: decimals,
     maximumFractionDigits: decimals,
-  }).format(Math.abs(amount));
+  }).format(Math.abs(value));
 
-  return `₦${value}`;
+  return `₦${formatted}`;
 }
 
 /**

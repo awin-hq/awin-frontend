@@ -1,0 +1,77 @@
+.page {
+  min-height: 100vh;
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 24px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-background, #fff);
+}
+
+.backButton {
+  align-self: flex-start;
+  margin-bottom: 16px;
+  border: none;
+  background: transparent;
+  color: var(--color-text, #111827);
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 64px;
+}
+
+.icon {
+  width: 88px;
+  height: 88px;
+  color: var(--color-primary, #f97316);
+}
+
+.title {
+  margin-top: 24px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text, #111827);
+}
+
+.message {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-secondary, #6b7280);
+}
+
+.actions {
+  margin-top: auto;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.primaryButton {
+  height: 56px;
+  border-radius: 999px;
+  background: var(--color-primary, #f97316);
+  color: white;
+  font-weight: 600;
+}
+
+.primaryButton:hover {
+  background: #ea580c;
+}
+
+.secondaryButton {
+  height: 56px;
+  border-radius: 999px;
+  border-color: var(--color-primary, #f97316);
+  color: var(--color-primary, #f97316);
+}
+
+.secondaryButton:hover {
+  background: #fff7ed;
+}

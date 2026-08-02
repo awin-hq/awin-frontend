@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button";
 import { TextInput } from "@/components/forms/text-input/text-input";
 import { PhoneInput } from "@/components/forms/phone-input/phone-input";
 import { TextareaInput } from "@/components/forms/TextareaInput/TextareaInput";
-
-import CustomerSuccess from "../CustomerSuccess";
+import { toNumber } from "@/lib/format";
+import { customersService } from "@/services";
 
 import styles from "./add-customers-form.module.css";
 
@@ -19,51 +19,70 @@ export default function AddCustomersForm() {
   const [fullName, setFullName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [note, setNote] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+
+    const trimmedName = fullName.trim();
+    const trimmedPhone = phoneNumber.trim();
+    const trimmedNote = note.trim();
 
     const newCustomer = {
       id: crypto.randomUUID(),
-      name: fullName,
-      phoneNumber,
-      note,
+      name: trimmedName,
+      phoneNumber: trimmedPhone,
+      notes: trimmedNote,
       status: "due",
+      outstandingBalance: 0,
+      totalCreditGiven: 0,
+      createdAt: new Date().toISOString(),
     };
 
     const existingCustomers = JSON.parse(
       localStorage.getItem("awìn_customers") || "[]"
     );
 
-    localStorage.setItem(
-      "awìn_customers",
-      JSON.stringify([
-        ...existingCustomers,
-        newCustomer,
-      ])
-    );
+    const storedCustomers = Array.isArray(existingCustomers)
+      ? existingCustomers
+      : [];
+    const updatedCustomers = [...storedCustomers, newCustomer];
 
-    setIsSubmitted(true);
+    localStorage.setItem("awìn_customers", JSON.stringify(updatedCustomers));
+
+    try {
+      const createdCustomer = await customersService.addCustomer({
+        name: trimmedName,
+        phoneNumber: trimmedPhone,
+      });
+
+      const customerToStore = {
+        ...newCustomer,
+        ...createdCustomer,
+        id: createdCustomer?.id || newCustomer.id,
+        name: createdCustomer?.name || trimmedName,
+        phoneNumber: createdCustomer?.phoneNumber || trimmedPhone,
+        notes: createdCustomer?.notes || trimmedNote,
+        outstandingBalance: toNumber(createdCustomer?.outstandingBalance),
+        totalCreditGiven: toNumber(createdCustomer?.totalCreditGiven),
+        status: createdCustomer?.status || "due",
+        createdAt: createdCustomer?.createdAt || newCustomer.createdAt,
+      };
+
+      updatedCustomers[updatedCustomers.length - 1] = customerToStore;
+      localStorage.setItem("awìn_customers", JSON.stringify(updatedCustomers));
+    } catch {
+      // Keep using local storage if the backend is unavailable.
+    }
+
+    window.dispatchEvent(new Event("awìn:data-updated"));
+
+    router.push(
+      `/credit-sales/add?name=${encodeURIComponent(trimmedName)}&phone=${encodeURIComponent(
+        trimmedPhone
+      )}`
+    );
   }
 
-  if (isSubmitted) {
-    return (
-      <CustomerSuccess
-        customerName={fullName}
-        onRecordCredit={() =>
-        router.push(
-          `/credit-sales/add?name=${encodeURIComponent(
-            fullName
-          )}&phone=${encodeURIComponent(phoneNumber)}`
-        )
-      }
-      onViewCustomer={() =>
-        router.push("/customers")
-      }
-      />
-    );
-  }
 
   return (
     <div className={styles.page}>
@@ -118,7 +137,6 @@ export default function AddCustomersForm() {
             value={note}
             onChange={(e) => setNote(e.target.value)}
             placeholder=""
-            required
           />
 
           <Button
