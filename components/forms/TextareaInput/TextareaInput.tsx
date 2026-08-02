@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { Textarea } from "@/components/ui/textarea";
 
-import styles from "./textarea-input.module.css";
+import styles from "./Textarea-input.module.css";
 
 type Props = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label: string;
