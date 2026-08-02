@@ -10,6 +10,10 @@
 
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);
+
+  max-width: 430px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .item {
