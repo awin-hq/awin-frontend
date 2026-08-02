@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Search, ChevronLeft, MoreVertical, Plus } from "lucide-react";
+import { Search, MoreVertical, Plus } from "lucide-react";
 
 import { SegmentedTabs } from "@/components/dashboard/segmented-tabs";
 import { EmptyState } from "@/components/dashboard/empty-state";
@@ -11,6 +11,7 @@ import { DebtorListItem } from "@/features/customers/components/debtor-list-item
 import { useAsync } from "@/hooks/use-async";
 import { customersService } from "@/services";
 
+import { BackButton } from "@/components/auth/back-button/back-button";
 import type { Customer } from "@/services/types";
 
 import styles from "./debtors-view.module.css";
@@ -75,14 +76,7 @@ export function PaymentsView() {
       {/* HEADER */}
       <header className={styles.header}>
 
-        <button
-          type="button"
-          className={styles.iconButton}
-          onClick={() => router.back()}
-          aria-label="Go back"
-        >
-          <ChevronLeft size={22} />
-        </button>
+        <BackButton href="/dashboard" />
 
         <h1 className={styles.title}>Customers</h1>
 

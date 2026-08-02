@@ -5,7 +5,7 @@ import { ResetPasswordForm } from "@/features/auth/components/reset-password-for
 export default function ResetPasswordPage() {
   return (
     <>
-      <BackButton href="/forgot-password" />
+      <BackButton href="/login" />
 
       <AuthHeader
         title="Kindly check your email"

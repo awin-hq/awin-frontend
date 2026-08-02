@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronLeft } from "lucide-react";
+// import { ChevronLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
+
+import { BackButton } from "@/components/auth/back-button/back-button";
 import { Button } from "@/components/ui/button";
 import { TextInput } from "@/components/forms/text-input/text-input";
 import { PhoneInput } from "@/components/forms/phone-input/phone-input";
@@ -88,14 +90,7 @@ export default function AddCustomersForm() {
       <main className={styles.content}>
         {/* Header */}
         <header className={styles.header}>
-          <button
-            type="button"
-            className={styles.backButton}
-            onClick={() => router.back()}
-            aria-label="Go back"
-          >
-            <ChevronLeft size={24} strokeWidth={1.8} />
-          </button>
+          <BackButton href="/customers" />
 
           <div>
             <h1 className={styles.title}>Add Customers</h1>

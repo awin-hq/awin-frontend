@@ -85,12 +85,14 @@ export function HeroSection() {
             Get Started
           </Link>
 
-          <button
-            type="button"
+          <a
+            href="https://cal.com/david-emulo/book-a-demo"
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.secondary}
           >
             Book a Demo
-          </button>
+          </a>
         </div>
       </div>
     </section>

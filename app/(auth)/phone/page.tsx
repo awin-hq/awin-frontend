@@ -5,7 +5,7 @@ import { BackButton } from "@/components/auth/back-button/back-button";
 export default function PhonePage() {
   return (
     <>
-      <BackButton />
+      <BackButton href="/register" />
 
       <AuthHeader
         title="Enter your phone number"

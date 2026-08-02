@@ -25,12 +25,14 @@ export function CTASection() {
             Get Started
           </Link>
 
-          <Link
-            href="/demo"
-            className={styles.secondaryButton}
+          <a
+            href="https://cal.com/david-emulo/book-a-demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.secondary}
           >
             Book a Demo
-          </Link>
+          </a>
         </div>
       </div>
     </section>

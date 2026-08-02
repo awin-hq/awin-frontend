@@ -1,12 +1,12 @@
-import { OtpBackButton } from "@/components/auth/otp-back-button";
 import { AuthHeader } from "@/components/auth/auth-header/auth-header";
 import { OtpForm } from "@/features/auth/components/otp-form";
+import { BackButton } from "@/components/auth/back-button/back-button";
 
 
 export default function OtpPage() {
   return (
     <>
-      <OtpBackButton />
+      <BackButton href="/phone" />
 
       <AuthHeader
         title="Check your email"

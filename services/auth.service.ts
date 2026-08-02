@@ -111,3 +111,16 @@ export function forgotPassword(email: string) {
     auth: false,
   });
 }
+export type ResetPasswordPayload = {
+  token: string;
+  password: string;
+  confirmPassword: string;
+};
+
+export function resetPassword(payload: ResetPasswordPayload) {
+  return apiFetch<unknown>("/api/auth/reset-password", {
+    method: "POST",
+    body: payload,
+    auth: false,
+  });
+}
