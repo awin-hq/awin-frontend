@@ -4,13 +4,14 @@ import { CreditCard, UserPlus, Users } from "lucide-react";
 import styles from "./quick-actions.module.css";
 
 const ACTIONS = [
+
   {
     href: "/credit-sales/add",
     label: "Record Credit",
     icon: CreditCard,
   },
   {
-    href: "/customers",
+    href: "/customers/add",
     label: "Add Debtor",
     icon: UserPlus,
   },
@@ -19,6 +20,7 @@ const ACTIONS = [
     label: "View Creditors",
     icon: Users,
   },
+
 ] as const;
 
 export function QuickActions() {
