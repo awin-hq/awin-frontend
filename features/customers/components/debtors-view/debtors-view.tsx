@@ -39,7 +39,10 @@ export function PaymentsView() {
     []
   );
 
-  const customers = Array.isArray(data) ? data : [];
+  const customers = useMemo(
+    () => (Array.isArray(data) ? data : []),
+    [data]
+  );
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();

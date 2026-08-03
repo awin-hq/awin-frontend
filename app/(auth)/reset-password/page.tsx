@@ -1,18 +1,19 @@
-import { BackButton } from "@/components/auth/back-button";
-import { AuthHeader } from "@/components/auth/auth-header/auth-header";
-import { ResetPasswordForm } from "@/features/auth/components/reset-password-form";
+import { ResetPasswordForm } from "@/features/auth/components/reset-password-form/reset-password-form";
 
-export default function ResetPasswordPage() {
-  return (
-    <>
-      <BackButton href="/login" />
+type ResetPasswordPageProps = {
+  searchParams: Promise<{
+    token?: string | string[];
+  }>;
+};
 
-      <AuthHeader
-        title="Kindly check your email"
-        description="Enter the 6-digit verification code sent to se*****@gmail.com"
-      />
+export default async function ResetPasswordPage({
+  searchParams,
+}: ResetPasswordPageProps) {
+  const params = await searchParams;
 
-      <ResetPasswordForm />
-    </>
-  );
+  const token = Array.isArray(params.token)
+    ? params.token[0] ?? null
+    : params.token ?? null;
+
+  return <ResetPasswordForm token={token} />;
 }
